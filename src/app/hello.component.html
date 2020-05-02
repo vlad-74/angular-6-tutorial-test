@@ -1,0 +1,32 @@
+<p bold selectedSize="15px" [defaultSize]="'14px'">Hello {{name}} Директива bold!</p>
+
+<p *ifHasAccess="['a','b','c','d']">Hello {{name}} - Директива ifHasAccess c AND!</p>
+
+<ng-template #tpl1><br><span>ng-template &  viewContainerRef.createEmbeddedView 1</span></ng-template>
+<ng-template #tpl2><span>ng-template &  viewContainerRef.createEmbeddedView 2</span></ng-template>
+<ng-template #tpl3><span>Этот контент не видно</span></ng-template>
+
+<p *ifHasAccess="['h', 'a']; op 'OR'">Hello {{name}} - Директива ifHasAccess c OR!</p>
+
+<hr>
+  <ng-container *ngTemplateOutlet="greet"></ng-container>
+<hr>
+  <ng-container *ngTemplateOutlet="eng; context: myContext"></ng-container>
+<hr>
+  <ng-container *ngTemplateOutlet="svk; context: myContext"></ng-container>
+<hr>
+   <ng-container *ngTemplateOutlet="tpl; context: myItems"></ng-container>
+<hr>
+
+<ng-content></ng-content>
+
+<ng-template #greet><span>Hello - ngTemplateOutlet & ng-template</span></ng-template>
+<ng-template #eng let-name><span>Hello {{name}} - ngTemplateOutlet + context & ng-template!</span></ng-template>
+<ng-template #svk let-person="localSk"><span>Ahoj {{person}} - ngTemplateOutlet + context & ng-template!</span></ng-template>
+ 
+<ng-template #tpl let-items="arr">
+  <ul>
+    <li *ngFor="let item of items" textContent="{{item}} - ngTemplateOutlet + context & ng-template &ngFor!"></li>
+  </ul>
+</ng-template>
+

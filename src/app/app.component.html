@@ -1,0 +1,23 @@
+<hello [name]="name" [isAdmin]="true">
+  <p >КОНТЕНТ APP КОМПОНЕНТА КАК ng-content В ДОЧЕРНЕМ КОМПОНЕНТЕ  </p>
+  <div>
+    <hr>
+      <ng-container *ngTemplateOutlet='liveTemplate'></ng-container>
+    <hr>
+    <p #par mouseBold>Директива mouseBold</p>
+    <!--Templates: -->
+    <ng-template #tmplC>
+      ДИНАМИЧЕСКИЙ ngTemplateOutlet 11111
+    </ng-template>
+
+    <ng-template #tmplC2>
+      ДИНАМИЧЕСКИЙ ngTemplateOutlet 22222
+    </ng-template>
+  </div>
+</hello>
+
+<div>
+  <br>
+  <button (click)="addBookDynamicComponent()">addBookDynamicComponent</button><br><br>
+  <ng-template #book></ng-template>
+</div>
