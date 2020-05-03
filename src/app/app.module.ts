@@ -9,10 +9,9 @@ import { MouseBoldDirective } from "./directive/mouse-bold.directive";
 import { IfHasAccessDirective } from "./directive/if-has-access.directive";
 import { BookItemComponent } from "./book-item/book-item.component";
 import { AppService } from './app.service';
-import { MyFormModule } from '../my-form/my-form.module';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, MyFormModule],
+  imports: [BrowserModule, FormsModule],
   declarations: [
     AppComponent,
     HelloComponent,
