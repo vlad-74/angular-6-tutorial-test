@@ -22,7 +22,6 @@ export class AppComponent implements AfterViewInit {
 
   constructor(
       private renderer: Renderer2,
-      private elementRef: ElementRef,
       private componentFactoryResolver: ComponentFactoryResolver
    ) {}
 
@@ -33,7 +32,7 @@ export class AppComponent implements AfterViewInit {
     buttonElement.innerHTML = `renderer.createElement<br>ДИНАМИЧЕСКИЙ ngTemplateOutlet`
 
     this.renderer.listen(buttonElement, 'click', (event) => {this.toggleTemplateSelected();})
-    
+
     this.renderer.insertBefore(
       this.par.nativeElement.parentNode, buttonElement, this.par.nativeElement
     );
@@ -55,6 +54,7 @@ export class AppComponent implements AfterViewInit {
     let bookItemComponent = this.componentFactoryResolver.resolveComponentFactory(BookItemComponent);
 
     let bookItemComponentRef = this.book.createComponent(bookItemComponent);
+
     (<BookItemComponent>bookItemComponentRef.instance).value = {
       title: 'Great Expectations',
       author: 'Charles Dickens'
