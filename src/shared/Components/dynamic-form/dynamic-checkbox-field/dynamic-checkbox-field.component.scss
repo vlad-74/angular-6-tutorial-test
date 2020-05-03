@@ -1,0 +1,53 @@
+@import 'const';
+
+.squaredTwo {
+  position: relative;
+  display: flex;
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
+  background: $white;
+  background-image: url('/assets/images/checkbox-bg2x.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 2px;
+  label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+  }
+  input[type=checkbox] {
+    &:checked + label {
+      background-image: url('/assets/images/checkbox-checked-bg2x.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}
+
+.form-controll__checkbox .label-text{
+  display: flex;
+  font-size: 14px;
+  font-family: PantonSemiBold;
+  line-height: 1.14;
+  cursor: pointer;
+}
+.form-controll__checkbox .form-group__invalid {
+  bottom: 10px;
+}
+.form-controll__checkbox.field_invalid .form-group:before {
+  display: none;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+}

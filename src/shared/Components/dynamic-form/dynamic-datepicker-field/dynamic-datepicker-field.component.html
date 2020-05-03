@@ -1,0 +1,17 @@
+<div [formGroup]="form" class="form-controll__{{field.controlType}}" [ngClass]="{ field_invalid: isInvalid() }">
+  <div class="form-group">
+    <label for="{{field.fieldName}}">{{field.label}}</label>
+    <input readonly [matDatepicker]="datePicker" [attr.name]="field.name" (click)="datePicker.open()"
+           (focus)="datePicker.open()"
+           formControlName="{{field.fieldName}}" id="{{field.fieldName}}"
+            [placeholder]="field.placeholder">
+    <div class="datepicker-icon"></div>
+    <mat-datepicker #datePicker></mat-datepicker>
+    <span class="dynamicForm__datepicker_open" (click)="datePicker.open()">
+      <mat-icon>today</mat-icon>
+    </span>
+    <span *ngIf="field.control.value" class="dynamicForm__datepicker_clear"
+          (click)="field.control.setValue('')"></span>
+    <cc-dynamic-error *ngIf="isInvalid()" [errors]="field.control.errors" [fieldType]="field.controlType"></cc-dynamic-error>
+  </div>
+</div>

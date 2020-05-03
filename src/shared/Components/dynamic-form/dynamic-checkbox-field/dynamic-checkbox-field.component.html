@@ -1,0 +1,16 @@
+<div [formGroup]="form" class="form-controll__{{field.controlType}}" [ngClass]="{ field_invalid: isInvalid() }">
+  <div class="form-group">
+
+    <div class="squaredTwo">
+      <input type="checkbox" [attr.name]="field.name" value="None" id="{{field.fieldName}}" name="check" checked formControlName="{{field.fieldName}}"/>
+      <label for="{{field.fieldName}}"></label>
+    </div>
+
+
+    <label for="{{field.fieldName}}" class="label-text">{{field.label}}</label>
+
+    <cc-dynamic-error *ngIf="isInvalid()" [errors]="field.control.errors" [fieldType]="field.controlType"></cc-dynamic-error>
+  </div>
+
+
+</div>

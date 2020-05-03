@@ -1,0 +1,24 @@
+<div [formGroup]="form" class="form__field-{{field.controlType}}" [ngClass]="{ field_invalid: isInvalid() }">
+    <mat-form-field [floatLabel]="field.floatLabel || 'show'">
+    <textarea matInput
+              placeholder="{{field.label}}"
+              name="{{field.name}}"
+              formControlName="{{field.fieldName}}"
+              id="{{field.fieldName}}"
+              (keyup)="$event.stopPropagation()"
+              [maxlength]="field.maxLength"
+              matTextareaAutosize>
+    </textarea>
+        <mat-hint *ngIf="field.maxLength" align="end">{{field.control.value.length}} / {{field.maxLength}}</mat-hint>
+        <mat-error *ngIf="isInvalid()">
+            <cc-dynamic-error [errors]="field.control.errors" [fieldType]="field.controlType"></cc-dynamic-error>
+        </mat-error>
+    </mat-form-field>
+    <label class="form-field_select" *ngIf="field.selectable">
+        <input type="checkbox"
+               [(ngModel)]="field.selectable.isFieldSelected"
+               [ngModelOptions]="{standalone: true}"
+               (ngModelChange)="field.selectable.onFieldSelectChange($event)"/>
+        <span></span>
+    </label>
+</div>

@@ -1,0 +1,15 @@
+<div *ngFor="let field of fields" [ngSwitch]="field.controlType" class="form__field {{field.classList ? field.classList.join(' ') : ''}}">
+  <cc-dynamic-input-field [field]="field" [form]="form" *ngSwitchCase="'text'" [state]="state"></cc-dynamic-input-field>
+  <cc-dynamic-textarea-field [field]="field" [form]="form" *ngSwitchCase="'textarea'" [state]="state"></cc-dynamic-textarea-field>
+  <cc-dynamic-number-field [field]="field" [form]="form" *ngSwitchCase="'number'" [state]="state"></cc-dynamic-number-field>
+  <cc-dynamic-password-field [field]="field" [form]="form" *ngSwitchCase="'password'" [state]="state"></cc-dynamic-password-field>
+  <cc-dynamic-email-field [field]="field" [form]="form" *ngSwitchCase="'email'" [state]="state"></cc-dynamic-email-field>
+  <cc-dynamic-checkbox-field [field]="field" [form]="form" *ngSwitchCase="'checkbox'" [state]="state"></cc-dynamic-checkbox-field>
+  <cc-dynamic-select-field [field]="field" [form]="form" *ngSwitchCase="'select'" [state]="state"></cc-dynamic-select-field>
+  <cc-dynamic-radio-field [field]="field" [form]="form" *ngSwitchCase="'radio'" [state]="state"></cc-dynamic-radio-field>
+  <cc-dynamic-datepicker-field [field]="field" [form]="form" *ngSwitchCase="'date'" [state]="state"></cc-dynamic-datepicker-field>
+  <cc-dynamic-group [group]="field" [form]="form" *ngSwitchCase="'group'" [state]="state"></cc-dynamic-group>
+  <cc-dynamic-label [field]="field" [form]="form" *ngSwitchCase="'label'" [state]="state"></cc-dynamic-label>
+  <cc-dynamic-autocomplete-field [field]="field" [form]="form" *ngSwitchCase="'autocomplete'" [state]="state"></cc-dynamic-autocomplete-field>
+  <cc-dynamic-datetimepicker-field [field]="field" [form]="form" *ngSwitchCase="'datetimepicker'" [state]="state"></cc-dynamic-datetimepicker-field>
+</div>

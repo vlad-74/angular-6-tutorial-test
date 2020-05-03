@@ -1,0 +1,9 @@
+<div [formGroup]="form" class="form-controll__{{field.controlType}}" [ngClass]="{ field_invalid: isInvalid() }">
+  <div>
+    <input type="radio" [attr.name]="field.name" formControlName="{{field.fieldName}}" [value]="field.value"
+           id="{{field.name}}__{{field.value}}">
+    <label for="{{field.name}}__{{field.value}}">
+      {{field.label}}
+    </label>
+  </div>
+</div>

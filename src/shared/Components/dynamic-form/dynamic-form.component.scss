@@ -1,0 +1,123 @@
+@import 'const';
+
+/* Общие стили для всех форм */
+
+cc-dynamic-form .form-group, .form__field-text, .form__field-number {
+  cursor: default;
+  position: relative;
+}
+
+cc-dynamic-form .mat-form-field {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+cc-dynamic-form .mat-form-field-underline {
+  background-color: $greyBorderLight !important;
+}
+
+cc-dynamic-form .mat-form-field-ripple {
+  background-color: $black;
+}
+
+cc-dynamic-form .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: $black;
+}
+
+cc-dynamic-form .mat-input-element {
+  caret-color: $black;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  font-family: PantonSemiBold !important;
+}
+
+cc-dynamic-form .form-field_select {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -16px;
+}
+
+cc-dynamic-form .mat-focused .mat-form-field-label {
+  color: $grey;
+}
+
+cc-dynamic-form .mat-form-field-invalid  .mat-form-field-label {
+  color: $grey;
+}
+
+cc-dynamic-form .mat-form-field-disabled .mat-input-wrapper {
+  cursor: default;
+}
+
+.mat-autocomplete-panel {
+  background: $white;
+}
+
+.form-controll__date input, .form-controll__datetimepicker input {
+  position: relative;
+  display: block;
+  padding-left: 32px;
+  cursor: pointer;
+}
+
+.form-controll__date .form-group, .form-controll__datetimepicker .form-group {
+  position: relative;
+}
+
+.form-controll__date .datepicker-icon, .form-controll__datetimepicker .datepicker-icon {
+  display: block;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url('/assets/images/icon-calendar2x.png');
+}
+
+.form-controll__datetimepicker {
+  position: relative;
+  .dynamicForm__datepicker_clear {
+    top: auto;
+    bottom: 4px;
+    content: '';
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 0;
+    margin-top: -12px;
+    background-image: url('/assets/images/icon-close2x.png');
+    background-size: contain;
+    cursor: pointer;
+  }
+  .dynamicForm__datepicker_open {
+    display: none;
+  }
+  label {
+    font-family: Panton;
+    font-size: 12px;
+    line-height: 1.33;
+    color: $grey;
+  }
+  input {
+    width: 100%;
+    margin-top: 4px;
+    font-family: PantonSemiBold;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.14;
+    color: $black;
+  }
+  .form-group {
+    padding-bottom: 7px;
+    border-bottom: 1px solid $greyBorderLight;
+  }
+  .field_invalid {
+    .form-group {
+      border-bottom: 1px solid $errorRed;
+    }
+  }
+}

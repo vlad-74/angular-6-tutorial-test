@@ -1,0 +1,8 @@
+<div [formGroup]="form" class="form-controll__{{field.controlType}}">
+	<cc-dynamic-datetimepicker-valueaccessor
+			[field]="field"
+			[form]="form"
+			[state]="state"
+			formControlName="{{field.fieldName}}">
+	</cc-dynamic-datetimepicker-valueaccessor>
+</div>

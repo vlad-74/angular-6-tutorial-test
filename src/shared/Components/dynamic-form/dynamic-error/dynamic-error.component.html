@@ -1,0 +1,29 @@
+<!--TODO: Make generic. Take this from state object-->
+<div class="form-group__invalid">
+  <div *ngIf="errors.serverError">
+    {{ errors.serverError }}
+  </div>
+  <div *ngIf="errors.pattern">
+    Неверный формат данных
+  </div>
+  <div *ngIf="errors.min">
+    Неверный формат данных
+  </div>
+  <div *ngIf="errors.required">
+    <span [ngSwitch]="fieldType">
+      <span *ngSwitchCase="FieldTypes.SELECT">Необходимо выбрать значение</span>
+      <span *ngSwitchCase="FieldTypes.TEXT">Необходимо заполнить значение</span>
+      <span *ngSwitchCase="FieldTypes.NUMBER">Необходимо заполнить значение</span>
+      <span *ngSwitchCase="FieldTypes.TEXTAREA">Необходимо заполнить значение</span>
+      <span *ngSwitchDefault>Необходимо заполнить значение</span>
+    </span>
+  </div>
+  <div *ngIf="errors.email">
+    Неверный формат E-mail
+  </div>
+  <div *ngIf="errors.max">
+    Превышено максимальное значение {{errors.max.max}}
+  </div>
+  <div *ngIf="errors.customError" [innerHTML]="errors.customError"></div>
+
+</div>

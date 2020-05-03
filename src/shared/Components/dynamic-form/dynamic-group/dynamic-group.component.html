@@ -1,0 +1,14 @@
+<div class="form__group">
+  <span>
+    <span class="form__group-label">{{group.label}}</span>
+    <label class="form-field_select" *ngIf="group.selectable">
+      <input id="check" type="checkbox" [(ngModel)]="group.selectable.isFieldSelected" [ngModelOptions]="{standalone: true}" (ngModelChange)="group.selectable.onFieldSelectChange($event)"
+      />
+      <label (click)="changeFlag(true)" class="form__group_select" [class.color]="group.selectable.isFieldSelected">собственником</label>
+      /
+      <label (click)="changeFlag(false)" class="form__group_select" [class.color]="!group.selectable.isFieldSelected">доверенным лицом</label>
+      <span></span>
+    </label>
+  </span>
+  <cc-dynamic-form [form]="form" [fields]="group.fields" [state]="state"></cc-dynamic-form>
+</div>

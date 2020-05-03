@@ -1,0 +1,18 @@
+@import 'const';
+
+.form__group {
+  margin-bottom: 32px;
+  &-label {
+    font-family: PantonBold;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    color: $black;
+  }
+}
+.color {
+  background-color: $red;
+  padding: 1px;
+  border-radius: 3px;
+  color: $white
+}
