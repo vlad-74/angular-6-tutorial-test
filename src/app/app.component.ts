@@ -31,7 +31,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngOnInit(){   
     this.httpService.getData().subscribe(data => {
       console.log('data', data)
-      this.users=data["userList"]
+      // this.users=data["userList"]
     });
   }
 
