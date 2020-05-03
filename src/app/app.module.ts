@@ -10,9 +10,10 @@ import { IfHasAccessDirective } from "./directive/if-has-access.directive";
 import { BookItemComponent } from "./book-item/book-item.component";
 import { AppService } from './app.service';
 import { FormComponent } from './form/form.component';
+import { ReactiveFormsModule }   from '@angular/forms';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   declarations: [
     AppComponent,
     HelloComponent,

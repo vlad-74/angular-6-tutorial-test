@@ -1,6 +1,8 @@
 <h3>Формы</h3>
 <hr>
-<h2>ngModel и form-control</h2>
+<h2>ngModel и FormControl</h2>
+<h4>ng-untouched ng-pristine ng-valid pattern</h4>
+<h4>ng-touched ng-dirty ng-invalid</h4>
 <div> 
   <div class="form-group">
       <label>Имя</label>
@@ -57,4 +59,41 @@
 </form>
 <div>Имя: {{myForm.value.name2}}</div>
 <div>Email: {{myForm.value.email2}}</div>
+<hr>
+
+<h2>FormGroup и FormControl</h2>
+<form [formGroup]="myForm3" novalidate (ngSubmit)="submit()">
+    <div class="form-group">
+        <label>Имя</label>
+        <input class="form-control" name="name3" formControlName="userName" />
+          
+        <div class="alert alert-danger"
+            *ngIf="myForm3.controls['userName'].invalid && myForm3.controls['userName'].touched">
+            Не указано имя
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" name="email3" formControlName="userEmail" />
+          
+        <div class="alert alert-danger"
+            *ngIf="myForm3.controls['userEmail'].invalid && myForm3.controls['userEmail'].touched">
+            Некорректный email
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Телефон</label>
+        <input class="form-control" name="phone3" formControlName="userPhone" />
+        <div class="alert alert-danger"
+            *ngIf="myForm3.controls['userPhone'].invalid && myForm3.controls['userPhone'].touched">
+            Некорректный номер телефона
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-default" [disabled]="myForm3.invalid">
+            Отправить
+        </button>
+    </div>
+</form>
+
 <hr>
