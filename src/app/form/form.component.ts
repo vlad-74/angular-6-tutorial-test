@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm} from '@angular/forms';
 
 export class User{
     name: string; 
@@ -13,6 +14,9 @@ export class User{
 })
 export class FormComponent implements OnInit {
 
+  name2: string;
+  email2: string;
+  phone2: string;  
 
   constructor() { }
 
@@ -20,8 +24,13 @@ export class FormComponent implements OnInit {
   }
 
   user: User = new User();
+
   addUser(){
       console.log(this.user);
+  }
+
+  submit(form: NgForm){
+     console.log('form', form);
   }
 
 }

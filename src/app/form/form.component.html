@@ -32,5 +32,29 @@
 </div>
 <hr>
 <h2>NgForm и FormGroup </h2>
-
+<!-- <form #myForm="ngForm" novalidate (ngSubmit)="onSubmit(myForm)"> -->
+<form #myForm="ngForm" novalidate>
+    <div class="form-group">
+        <label>Имя</label>
+        <input class="form-control" name="name2" [(ngModel)]="name2" required />
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" name="email2" ngModel 
+            required email />
+    </div>
+    <div class="form-group">
+        <label>Телефон</label>
+        <input class="form-control" name="phone2" ngModel 
+            required pattern="[0-9]{10}" />
+    </div>
+    <div class="form-group">
+        <!-- <input type="submit" [disabled]="myForm.invalid" class="btn btn-default" value="Отправить" /> -->
+        <button [disabled]="myForm.invalid"
+            class="btn btn-default" (click)="submit(myForm)">Добавить
+        </button>
+    </div>
+</form>
+<div>Имя: {{myForm.value.name2}}</div>
+<div>Email: {{myForm.value.email2}}</div>
 <hr>
