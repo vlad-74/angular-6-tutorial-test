@@ -1,0 +1,52 @@
+@import 'const';
+$maxHeight: 72px;
+$maxWidth: 112px;
+:host {
+    height: 72px;
+    width: 112px;
+    margin-right: 16px;
+    margin-bottom: 8px;
+}
+
+.miniature {
+    height: $maxHeight;
+
+    &__container {
+        position: relative;
+        overflow: hidden;
+        height: $maxHeight;
+        width: $maxWidth;
+        border: 1px solid $greyBorderLight;
+        display: flex;
+        align-items: center;
+        margin-right: 16px;
+
+        & > img {
+            max-width: $maxWidth;
+            width: $maxWidth;
+            cursor: pointer;
+        }
+    }
+    &__remove {
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        width: 16px;
+        height: 16px;
+        background: url('/assets/images/photo-min-del2x.png') center no-repeat;
+        background-size: contain;
+        cursor: pointer;
+    }
+  &__square {
+    height: $maxHeight;
+    width: $maxWidth;
+    background: black;
+    cursor: pointer;
+  }
+}
+.selection__file-chose {
+    cursor: default;
+}
+::ng-deep .miniature__container .mat-spinner {
+    margin-left: 30px !important;
+}

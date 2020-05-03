@@ -1,0 +1,33 @@
+@import 'const';
+
+.search {
+  &__container {
+    position: relative;
+    background: $white;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      right: 12px;
+      top: 50%;
+      margin-top: -12px;
+      position: absolute;
+      background-image: url('/assets/images/icon-search3x.png');
+      background-size: contain;
+    }
+    & > input {
+      width: 100%;
+      padding: 16px;
+      font-family: PantonSemiBold;
+      font-size: 12px;
+      line-height: 1.33;
+      color: $black;
+      box-shadow: 0 2px 8px 0 $shadow;
+      &::-ms-clear {
+        display: none;
+      }
+    }
+  }
+}
