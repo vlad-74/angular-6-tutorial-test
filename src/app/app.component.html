@@ -18,15 +18,16 @@
 </hello>
 
 <div>
-  <br>
-  <button (click)="addBookDynamicComponent()">        addBookDynamicComponent
-  </button>
+  <hr>
   <p>
     this.componentFactoryResolver.resolveComponentFactory(BookItemComponent);
   </p>
-
   <p>
     let bookItemComponentRef = this.book.createComponent(bookItemComponent);
   </p>
+    <button (click)="addBookDynamicComponent()">        addBookDynamicComponent
+  </button>
+  <br><br>
   <ng-template #book></ng-template>
+  <hr>
 </div>
