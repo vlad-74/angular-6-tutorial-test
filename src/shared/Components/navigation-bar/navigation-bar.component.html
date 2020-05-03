@@ -1,0 +1,38 @@
+<div class="navigation" fxLayout="row" fxLayoutAlign="left center">
+  <div class="navigation__logo">
+    <img src="/assets/images/logo.png">
+  </div>
+    <div class="navigation__menu" fxFlex>
+    <ul fxLayout="row">
+      <ng-container *ngFor="let link of navLinks; let $index = index">
+        <li routerLinkActive="navigation__menu-active">
+          <a *ngIf="!link.childs" routerLink="{{link.url}}">{{link.title}}</a>
+          <ng-container *ngIf="link.childs">
+            <span
+                (mouseover)="openMenu(link)"
+                (mouseout)="closeMenu(link)"
+                class="sub-menu-parent">
+                {{link.title}}
+            </span>
+            <div *ngIf="link.childs" class="icon" [ngClass]="{'icon--openmenu': menuVisible, 'icon--closemenu': !menuVisible}"></div>
+            <div (mouseover)="openMenu(link, $event)" (mouseout)="closeMenu(link)" class="sub-menu-panel"
+                  [style.display]="link.visible ? 'block' : 'none'">
+              <div class="sub-menu-content">
+                <a *ngFor="let childLink of link.childs"
+                  [routerLink]="childLink.url"
+                  class="sub-menu-item"
+                  routerLinkActive="navigation__sub-menu-active">
+                  {{childLink.title}}
+                </a>
+              </div>
+            </div>
+          </ng-container>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+  <div>
+    <cc-exit-menu></cc-exit-menu>
+  </div>
+</div>
+

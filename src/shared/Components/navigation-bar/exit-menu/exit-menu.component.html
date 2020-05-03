@@ -1,0 +1,31 @@
+<div class="loading-wrapper" *ngIf="listIsLoading">
+  <div class="loading">
+    <cc-spinner></cc-spinner>
+  </div>
+</div>
+
+<div class="exit-menu">
+  <span
+   class="sub-menu-parent"
+  (mouseover)="openMenu()"
+  (mouseout)="closeMenu()">
+    &#8942;
+  </span>
+  <div
+   class="sub-menu-panel"
+  (mouseover)="openMenu()"
+  (mouseout)="closeMenu()"
+  [style.display]="menuVisible ? 'block' : 'none'">
+    <div class="sub-menu-content">
+      <a *ccIfHasAccess = "['GET_USER_LIST'];"
+      class="sub-menu-item"
+      href="http://vmskkebanavto1.rusfinance.ru:5601/"
+      target="_blank">Логи</a>
+      <a class="sub-menu-item" (click)="changePassword()">Сбросить пароль</a>
+      <a class="sub-menu-item" (click)="logout()">Выйти</a>
+    </div>
+  </div>
+</div>
+
+
+
