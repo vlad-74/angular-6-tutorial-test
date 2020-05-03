@@ -21,7 +21,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   liveTemplate: TemplateRef<any>;
 
   name = 'Angular';
-  users = [];
+  users: User[] = [];
 
   constructor(
       private renderer: Renderer2,
@@ -31,11 +31,11 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngOnInit(){   
     this.httpService.getData()
-    .pipe(take(3))
-    .subscribe(data => {
-      console.log('data', data)
-      this.users = data
-    });
+      .subscribe(data => {
+        console.log('typeof--', data);
+        this.users = data.filter((item, i) =>i<3);
+        console.log('data22', this.users)
+      });
   }
 
   ngAfterViewInit(): void {
