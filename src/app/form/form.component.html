@@ -1,8 +1,7 @@
 <h3>Формы</h3>
 <hr>
-<h2>ngModel и FormControl</h2>
-  <h4>ng-untouched ng-pristine ng-valid pattern</h4>
-  <h4>ng-touched ng-dirty ng-invalid</h4>
+<h3>ngModel и FormControl</h3>
+  <h4>ng-untouched ng-pristine ng-valid pattern // ng-touched ng-dirty ng-invalid</h4>
   <div> 
     <div class="form-group">
         <label>Имя</label>
@@ -33,7 +32,8 @@
     </div>
   </div>
   <hr>
-<h2>NgForm и FormGroup </h2>
+<h3>NgForm и FormGroup</h3>
+  <h3>- form #myForm="ngForm"</h3>
   <!-- <form #myForm="ngForm" novalidate (ngSubmit)="onSubmit(myForm)"> -->
   <form #myForm="ngForm" novalidate>
       <div class="form-group">
@@ -61,7 +61,9 @@
   <div>Email: {{myForm.value.email2}}</div>
   <hr>
 
-<h2>FormGroup и FormControl</h2>
+<h3>FormGroup и FormControl</h3>
+  <h3>- form [formGroup]="myForm"</h3>
+  <h3>- myForm = new FormGroup // myForm = this.formBuilder.group</h3>
   <form [formGroup]="myForm3" novalidate (ngSubmit)="submit3()">
       <div class="form-group">
           <label>Имя</label>
@@ -91,9 +93,12 @@
       </div>
       <div formArrayName="phones">
         <div class="form-group" *ngFor="let phone of myForm3.controls['phones'].controls; let i = index">
-            <label>Телефон</label>
+            <label>ТелефонЫ</label>
             <input class="form-control" formControlName="{{i}}" />
         </div>
+        <br>
+        <span>"phones": new FormArray([new FormControl("+7", Validators.required)])</span>
+        <span style="">"phones": this.formBuilder.array([["+7", Validators.required]])</span>
       </div>
       <div class="form-group">
         <button class="btn btn-default" (click)="addPhone()">
