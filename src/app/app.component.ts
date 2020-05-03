@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation, OnInit, AfterViewInit, ViewChild, Renderer2, TemplateRef, ElementRef, EmbeddedViewRef, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
+import { map, tap, take } from 'rxjs/operators';
 import { BookItemComponent } from './book-item/book-item.component';
 import { HttpService} from './http.service';
 import {User} from './user';
@@ -20,7 +21,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   liveTemplate: TemplateRef<any>;
 
   name = 'Angular';
-  users: User[]=[];
+  users = [];
 
   constructor(
       private renderer: Renderer2,
@@ -29,9 +30,11 @@ export class AppComponent implements OnInit, AfterViewInit {
    ) {}
 
   ngOnInit(){   
-    this.httpService.getData().subscribe(data => {
+    this.httpService.getData()
+    .pipe(take(3))
+    .subscribe(data => {
       console.log('data', data)
-      // this.users=data["userList"]
+      this.users = data
     });
   }
 
