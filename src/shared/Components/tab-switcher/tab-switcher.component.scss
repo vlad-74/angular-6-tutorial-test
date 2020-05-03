@@ -1,0 +1,64 @@
+@import 'const';
+
+.switcher__container::ng-deep {
+  margin-bottom: 32px;
+
+  .mat-tab-label {
+    min-width: 104px;
+    padding: 0 10px 8px;
+    height: auto;
+    font-size: 12px;
+    font-family: PantonSemiBold;
+    border-bottom: 1px solid $greyBorderLight;
+
+    &-active {
+      opacity: 1;
+      border-color: $red;
+
+      .switcher__icon {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.switcher__icon {
+  width: 24px;
+  height: 24px;
+  margin: 10px auto 5px auto;
+  opacity: 0.3;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  &--sb {
+    background-image: url(/assets/images/i-tab-sb.svg);
+  }
+
+  &--info {
+    background-image: url(/assets/images/i-tab-info2x.png);
+  }
+
+  &--photo {
+    background-image: url(/assets/images/i-tab-photo2x.png);
+  }
+
+  &--details {
+    background-image: url(/assets/images/i-tab-details2x.png);
+  }
+
+  &--order {
+    background-image: url(/assets/images/i-tab-order2x.png);
+  }
+
+  &--finish {
+    background-image: url(/assets/images/i-tab-finish2x.png);
+
+  }
+
+  &--done {
+    width: 15px;
+    height: 15px;
+    margin-left: 70%;
+  }
+}
