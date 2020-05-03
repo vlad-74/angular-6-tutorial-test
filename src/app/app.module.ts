@@ -9,6 +9,7 @@ import { MouseBoldDirective } from "./directive/mouse-bold.directive";
 import { IfHasAccessDirective } from "./directive/if-has-access.directive";
 import { BookItemComponent } from "./book-item/book-item.component";
 import { AppService } from './app.service';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -18,7 +19,8 @@ import { AppService } from './app.service';
     BoldDirective,
     MouseBoldDirective,
     IfHasAccessDirective,
-    BookItemComponent
+    BookItemComponent,
+    FormComponent
   ],
   entryComponents: [BookItemComponent],
   bootstrap: [AppComponent],
