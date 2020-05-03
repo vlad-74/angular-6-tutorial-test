@@ -18,6 +18,13 @@
 
 <div>
   <br>
-  <button (click)="addBookDynamicComponent()">addBookDynamicComponent</button><br><br>
+  <button (click)="addBookDynamicComponent()">addBookDynamicComponent</button>
+  <p>
+    this.componentFactoryResolver.resolveComponentFactory(BookItemComponent);
+  </p>
+
+  <p>
+    let bookItemComponentRef = this.book.createComponent(bookItemComponent);
+  </p>
   <ng-template #book></ng-template>
 </div>
