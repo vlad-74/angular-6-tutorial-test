@@ -1,5 +1,12 @@
 <app-form></app-form>
-
+<hr>
+<ul>
+  <li *ngFor="let user of users">
+  <p>Имя пользователя: {{user?.name}}</p>
+  <p>Возраст пользователя: {{user?.age}}</p>
+  </li>
+</ul>
+<hr>
 <hello [name]="name" [isAdmin]="true">
   <p >КОНТЕНТ APP КОМПОНЕНТА КАК ng-content В ДОЧЕРНЕМ КОМПОНЕНТЕ  </p>
   <div>

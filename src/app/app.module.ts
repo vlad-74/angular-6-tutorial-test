@@ -11,9 +11,11 @@ import { BookItemComponent } from "./book-item/book-item.component";
 import { AppService } from './app.service';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule }   from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpService } from './http.service';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   declarations: [
     AppComponent,
     HelloComponent,
@@ -25,7 +27,7 @@ import { ReactiveFormsModule }   from '@angular/forms';
   ],
   entryComponents: [BookItemComponent],
   bootstrap: [AppComponent],
-  providers: [AppService]
+  providers: [AppService, HttpService]
 })
 
 export class AppModule {}

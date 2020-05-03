@@ -1,6 +1,7 @@
-import { Component, ViewEncapsulation, AfterViewInit, ViewChild, Renderer2, TemplateRef, ElementRef, EmbeddedViewRef, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, AfterViewInit, ViewChild, Renderer2, TemplateRef, ElementRef, EmbeddedViewRef, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 import { BookItemComponent } from './book-item/book-item.component';
-
+import { HttpService} from './http.service';
+import {User} from './user';
 
 @Component({
   selector: 'my-app',
@@ -8,7 +9,7 @@ import { BookItemComponent } from './book-item/book-item.component';
   styleUrls: [ './app.component.css' ],
   // encapsulation: ViewEncapsulation.None // https://dzone.com/articles/what-is-viewencapsulation-in-angular
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild("par", {read: ElementRef}) par: ElementRef;
   @ViewChild('book', {read: ViewContainerRef}) book: ViewContainerRef;
 
@@ -19,11 +20,20 @@ export class AppComponent implements AfterViewInit {
   liveTemplate: TemplateRef<any>;
 
   name = 'Angular';
+  users: User[]=[];
 
   constructor(
       private renderer: Renderer2,
-      private componentFactoryResolver: ComponentFactoryResolver
+      private componentFactoryResolver: ComponentFactoryResolver,
+      private httpService: HttpService
    ) {}
+
+  ngOnInit(){   
+    this.httpService.getData().subscribe(data => {
+      console.log('data', data)
+      this.users=data["userList"]
+    });
+  }
 
   ngAfterViewInit(): void {
     let buttonElement = this.renderer.createElement('button');
