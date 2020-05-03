@@ -1,8 +1,0 @@
-<div class="selection__file-chose" *ngIf="!photo.id">
-</div>
-<div class="miniature__container" *ngIf="photo.id">
-  <img *ngIf="imgSrc && !errSrc" [src]="imgSrc" (click)="clickPhoto.next(photo)" />
-  <cc-spinner *ngIf="!imgSrc && !errSrc"></cc-spinner>
-  <div class="miniature__square" *ngIf="errSrc" (click)="clickPhoto.next(photo)" ></div>
-  <div class="miniature__remove" (click)="removePhoto($event)"></div>
-</div>

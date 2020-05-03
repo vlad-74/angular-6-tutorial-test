@@ -1,8 +1,0 @@
-<div [formGroup]="form" class="form-controll__{{field.controlType}}" [ngClass]="{ field_invalid: isInvalid() }">
-  <div class="form-group">
-    <label for="{{field.fieldName}}">{{field.label}}</label>
-    <input type="email" [attr.name]="field.name" formControlName="{{field.fieldName}}" id="{{field.fieldName}}">
-
-    <cc-dynamic-error *ngIf="isInvalid()" [errors]="field.control.errors" [fieldType]="field.controlType"></cc-dynamic-error>
-  </div>
-</div>
