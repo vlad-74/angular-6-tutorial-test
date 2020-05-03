@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, NgSwitch } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { MainRoutes } from '../Main/main.routes';
+// import { MainRoutes } from '../Main/main.routes';
 import { NavigationBarComponent } from './Components/navigation-bar/navigation-bar.component';
 import { DynamicFormComponent } from './Components/dynamic-form/dynamic-form.component';
 import { DynamicInputFormComponent } from './Components/dynamic-form/dynamic-input-field/dynamic-input-field.component';
@@ -15,13 +15,13 @@ import { DynamicNumberFieldComponent } from './Components/dynamic-form/dynamic-n
 import { DynamicGroupComponent } from './Components/dynamic-form/dynamic-group/dynamic-group.component';
 import { DynamicSelectFieldComponent } from './Components/dynamic-form/dynamic-select-field/dynamic-select-field.component';
 import { DynamicErrorComponent } from './Components/dynamic-form/dynamic-error/dynamic-error.component';
-import {
-  MAT_DATE_LOCALE, MatAutocompleteModule, MatDatepickerModule, MatDialogModule, MatIconModule, MatInputModule,
-  MatMenuModule,
-  MatProgressSpinnerModule, MatSelectModule, MatTabsModule
-} from '@angular/material';
+// import {
+//   MAT_DATE_LOCALE, MatAutocompleteModule, MatDatepickerModule, MatDialogModule, MatIconModule, MatInputModule,
+//   MatMenuModule,
+//   MatProgressSpinnerModule, MatSelectModule, MatTabsModule
+// } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatMomentDateModule } from '@angular/material-moment-adapter';
+// import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { ErrorMessagesService } from './Services/error-messages.service';
 import { SpinnerComponent } from './Components/spinner/spinner.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -36,11 +36,11 @@ import { DialogService } from './Services/dialog.service';
 import { GalleryComponent } from './Components/gallery/gallery.component';
 import { VideoComponent } from './Components/video/video.component';
 import { SelectionComponent } from './Components/selection/selection.component';
-import { InspectionPlaceComponent } from '../Main/Components/contract-summary/inspection-place/inspection-place.component';
+// import { InspectionPlaceComponent } from '../Main/Components/contract-summary/inspection-place/inspection-place.component';
 import { DynamicTextareaFieldComponent } from './Components/dynamic-form/dynamic-textarea-field/dynamic-textarea-field.component';
 import { NumberFormatterDirective } from './Directives/number-formatter.directive';
 import { IfHasAccessDirective } from './Directives/if-has-access.directive';
-import { EvaluationModalViewComponent } from '../Main/Components/complaints-page/evaluation-modal-view/evaluation-modal-view.component';
+// import { EvaluationModalViewComponent } from '../Main/Components/complaints-page/evaluation-modal-view/evaluation-modal-view.component';
 import {
   DynamicDatetimepickerFieldComponent,
   DynamicDatetimepickerValueaccessorComponent
@@ -56,20 +56,20 @@ import { ExitMenuComponent } from './Components/navigation-bar/exit-menu/exit-me
     ReactiveFormsModule,
     RouterModule,
     FormsModule,
-    MatProgressSpinnerModule,
-    MatDatepickerModule,
-    MatMomentDateModule,
-    MatIconModule,
-    MatInputModule,
-    MatMenuModule,
-    MatTabsModule,
-    MatSelectModule,
-    MatAutocompleteModule,
-    FlexLayoutModule,
-    MatDialogModule
+    // MatProgressSpinnerModule,
+    // MatDatepickerModule,
+    // MatMomentDateModule,
+    // MatIconModule,
+    // MatInputModule,
+    // MatMenuModule,
+    // MatTabsModule,
+    // MatSelectModule,
+    // MatAutocompleteModule,
+    // FlexLayoutModule,
+    // MatDialogModule
   ],
   providers: [
-    {provide: MAT_DATE_LOCALE, useValue: 'ru-RU'},
+    // {provide: MAT_DATE_LOCALE, useValue: 'ru-RU'},
     ErrorMessagesService,
     FileUDService,
     DialogService,
@@ -114,8 +114,8 @@ import { ExitMenuComponent } from './Components/navigation-bar/exit-menu/exit-me
     DialogModalComponent,
     GalleryComponent,
     VideoComponent,
-    InspectionPlaceComponent,
-    EvaluationModalViewComponent
+    // InspectionPlaceComponent,
+    // EvaluationModalViewComponent
   ],
   exports: [
     NavigationBarComponent,
