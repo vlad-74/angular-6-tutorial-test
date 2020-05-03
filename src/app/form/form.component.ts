@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-export class Phone{
-    constructor(
-      public title: string, 
-      public price: number, 
-      public company: string)
-    { }
+export class User{
+    name: string; 
+    email: string;
+    phone: string;
 }
 
 @Component({
@@ -15,21 +13,15 @@ export class Phone{
 })
 export class FormComponent implements OnInit {
 
- title: string;
-price: number;
-company: string;
-  
-phones: Phone[] = [];
-companies: string[] = ["Apple", "Huawei", "Xiaomi", "Samsung", "LG", "Motorola", "Alcatel"];
-     
 
   constructor() { }
 
   ngOnInit() {
   }
 
-      addPhone(){
-        this.phones.push(new Phone(this.title, this.price, this.company));
-    }
+  user: User = new User();
+  addUser(){
+      console.log(this.user);
+  }
 
 }

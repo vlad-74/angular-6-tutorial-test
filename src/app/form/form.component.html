@@ -1,28 +1,36 @@
+<h3>Формы</h3>
+<hr>
+<h2>ngModel и form-control</h2>
 <div> 
-  <h2>Формы</h2>
   <div class="form-group">
-      <label>Название модели</label>
-      <input class="form-control" name="title" [(ngModel)]="title" />
+      <label>Имя</label>
+      <input class="form-control" name="name" [(ngModel)]="user.name" #name="ngModel" required />
+      <div [hidden]="name.valid || name.untouched" class="alert alert-danger">
+        Не указано имя
+      </div>
   </div>
   <div class="form-group">
-      <label>Цена</label>
-      <input type="number" class="form-control" name="price" [(ngModel)]="price" />
+      <label>Email</label>
+      <input class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" 
+          required pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}" />
+      <div [hidden]="email.valid || email.untouched" class="alert alert-danger">
+        Некорректный email
+      </div>
   </div>
   <div class="form-group">
-      <label>Производитель</label>
-      <select class="form-control" name="company" [(ngModel)]="company">
-          <option  *ngFor="let comp of companies" [value]="comp">
-              {{comp}}
-          </option>
-      </select>
+      <label>Телефон</label>
+      <input class="form-control" name="phone" [(ngModel)]="user.phone" #phone="ngModel" 
+          required pattern="[0-9]{10}" />
+      <div [hidden]="phone.valid || phone.untouched" class="alert alert-danger">
+        Некорректный телефон
+      </div>
   </div>
   <div class="form-group">
-      <button class="btn btn-default" (click)="addPhone()">Добавить</button>
+      <button [disabled]="name.invalid || email.invalid || phone.invalid" 
+        class="btn btn-default" (click)="addUser()">Добавить</button>
   </div>
 </div>
-<div><h3>Добавленные элементы</h3>
-  <ul *ngFor="let p of phones">
-      <li>{{p.title}} ({{p.company}}) - {{p.price}}</li>
-  </ul>
-</div>
+<hr>
+<h2>NgForm и FormGroup </h2>
+
 <hr>
