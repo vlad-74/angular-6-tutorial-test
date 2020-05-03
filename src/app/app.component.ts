@@ -31,8 +31,9 @@ export class AppComponent implements AfterViewInit {
     // const text = this.renderer.createText('Text');
     // this.renderer.appendChild(buttonElement, text);
     buttonElement.innerHTML = `renderer.createElement<br>ДИНАМИЧЕСКИЙ ngTemplateOutlet`
-    buttonElement.innerHTML = `renderer.createElement<br>ДИНАМИЧЕСКИЙ ngTemplateOutlet`
+
     this.renderer.listen(buttonElement, 'click', (event) => {this.toggleTemplateSelected();})
+    
     this.renderer.insertBefore(
       this.par.nativeElement.parentNode, buttonElement, this.par.nativeElement
     );

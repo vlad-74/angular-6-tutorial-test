@@ -8,10 +8,12 @@
   3. Манипуляция с DOM
     3.1. Renderer
     3.2. ngTemplateOutlet
-    3.3. @ViewChild и # и @ElementRef
-    3.4. @ViewChild и # и TemplateRef и this.viewContainerRef.createEmbeddedView
-    3.5. @ViewChild и # и viewContainerRef и createComponent
-    3.6. ДИНАМИЧЕСКИЙ ngTemplateOutlet  И @ViewChild И TemplateRef<any>
+    3.3. Динамически добавить кнопку или инпут возле <p>:
+      - # на <p> и @ViewChild и @ElementRef и createElement и renderer.listen и renderer.insertBefore или renderer.appendChild
+    3.4. Логика отображения нескольких ng-template 
+      - # на ng-template и @ViewChild и TemplateRef и EmbeddedViewRef и this.viewContainerRef.createEmbeddedView
+    3.5. # и @ViewChild и viewContainerRef и createComponent
+    3.6. ДИНАМИЧЕСКИЙ ngTemplateOutlet - @ViewChild И TemplateRef<any>
   4. ng-content - родительский контент в дочернем (вся логика в родителе)
   5. Структурная директива - ifHasAccess(templateRef и ViewContainerRef)
   6. Атрибутные директивы - bold & mouseBold (HostBinding и HostListener // host )
