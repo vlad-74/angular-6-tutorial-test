@@ -6,7 +6,8 @@ import { MyFormComponent } from './my-form/my-form.component';
   imports: [
     CommonModule
   ],
-  declarations: [MyFormComponent]
+  declarations: [MyFormComponent],
+  exports: [MyFormComponent],
 })
 
 export class MyFormModule { }
