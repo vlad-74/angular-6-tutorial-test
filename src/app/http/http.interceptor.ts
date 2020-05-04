@@ -1,29 +1,47 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse, HttpErrorResponse } from '@angular/common/http';
-import { tap, catchError } from 'rxjs/operators';
+import { tap, catchError, retry } from 'rxjs/operators';
 
 @Injectable()
 export class ParamInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
+    console.log('ПРЕЛОАДЕР - СТАРТ ЗАПРОСА');
+      
     if (req.url.includes('jsonplaceholder.typicode.com')) {
         const paramReq = req.clone({ params: req.params.set('userId', '7') });
 
+        // retry - Повторите определенное количество раз в случае возникновения ошибки.
         return next.handle(paramReq).pipe(
+          retry(1),
           tap(evt => {
             if (evt instanceof HttpResponse) {
-              if(evt.body && evt.status === 200){ console.log('evt.body', evt.body) }
+              if(evt.body && evt.status === 200){ console.log('evt.body', evt.body); console.log('ПРЕЛОАДЕР - ОКОНЧАНИЕ ЗАПРОСА'); }
             }
           }),
           catchError((err: any) => {
-              if(err instanceof HttpErrorResponse) {
-                  try {
-                    console.log('try - err instanceof HttpErrorResponse')
-                  } catch(e) {
-                    console.log('catch - err instanceof HttpErrorResponse', e)
-                  }
-              }
-              return of(err);
+            
+            let errorMessage = '';
+            if (err.error instanceof ErrorEvent) {
+              // client-side error
+              errorMessage = `Error: ${err.error.message}`;
+            } else {
+              // server-side error
+              errorMessage = `Error Code: ${err.status}\nMessage: ${err.message}`;
+            }
+            return throwError(errorMessage);
+
+            // console.log('ПРЕЛОАДЕР - ОКОНЧАНИЕ ЗАПРОСА');
+            // if(err instanceof HttpErrorResponse) {
+            //   try {
+            //     console.log('try - err instanceof HttpErrorResponse')
+            //   } catch(e) {
+            //     console.log('catch - err instanceof HttpErrorResponse', e)
+            //   }
+            // }
+            // return of(err);
+
           }));
     } else {
         console.log('req - ', req);

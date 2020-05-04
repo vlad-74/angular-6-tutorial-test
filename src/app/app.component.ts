@@ -34,7 +34,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.httpService.getData()
       .subscribe(
         data => {this.users = data.filter((item, i) => i<3 ); },
-        er => {this.error = er.message; console.log('error', er)}
+        er => {this.error = er.message; console.log('error - ngOnInit', er)}
       )
   }
 
