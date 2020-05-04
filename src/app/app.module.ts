@@ -14,9 +14,15 @@ import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule }   from '@angular/forms';
 import { HttpService } from './http/http.service';
 import { AuthInterceptor, ParamInterceptor } from './http/http.interceptor';
+import {Routes, RouterModule} from '@angular/router';
+
+const appRoutes: Routes =[
+  { path: '', component: AppComponent},
+  { path: '**', component: FormComponent }
+  ];
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
   declarations: [
     AppComponent,
     HelloComponent,
