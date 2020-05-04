@@ -23,7 +23,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   name = 'Angular';
   users: User[] = [];
   error:any;
-  
+
   constructor(
       private renderer: Renderer2,
       private componentFactoryResolver: ComponentFactoryResolver,
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         this.users = data.filter((item, i) => i<3 );
         console.log('data22', this.users)
       })
-      error => {this.error = error.message; console.log(error);}
+      error => {this.error = error.message; console.log('error', error);}
   }
 
   ngAfterViewInit(): void {

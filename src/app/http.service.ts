@@ -8,7 +8,7 @@ export class HttpService{
    constructor(private http: HttpClient) { }
 
   getData(): Observable<User[]> {
-    return this.http.get('https://jsonplaceholder.typicode.com/users');
+    return this.http.get('https://jsonplaceholder.typicode.com/userts');
   }
 
 }
