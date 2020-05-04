@@ -22,7 +22,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   name = 'Angular';
   users: User[] = [];
-
+  error:any;
+  
   constructor(
       private renderer: Renderer2,
       private componentFactoryResolver: ComponentFactoryResolver,
@@ -33,9 +34,10 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.httpService.getData()
       .subscribe(data => {
         console.log('typeof--', data);
-        this.users = data.filter((item, i) =>i<3);
+        this.users = data.filter((item, i) => i<3 );
         console.log('data22', this.users)
-      });
+      })
+      error => {this.error = error.message; console.log(error);}
   }
 
   ngAfterViewInit(): void {
