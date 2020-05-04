@@ -12,8 +12,8 @@ import { BookItemComponent } from "./book-item/book-item.component";
 import { AppService } from './app.service';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule }   from '@angular/forms';
-import { HttpService } from './http.service';
-import { AuthInterceptor, ParamInterceptor } from './api.interceptor';
+import { HttpService } from './http/http.service';
+import { AuthInterceptor, ParamInterceptor } from './http/api.interceptor';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
