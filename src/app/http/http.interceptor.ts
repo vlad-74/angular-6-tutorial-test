@@ -21,7 +21,7 @@ export class ParamInterceptor implements HttpInterceptor {
             }
           }),
           catchError((err: any) => {
-            
+            console.log('ПРЕЛОАДЕР - ОКОНЧАНИЕ ЗАПРОСА')
             let errorMessage = '';
             if (err.error instanceof ErrorEvent) {
               // client-side error
