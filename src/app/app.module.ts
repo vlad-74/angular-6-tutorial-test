@@ -16,15 +16,18 @@ import { HttpService } from './http/http.service';
 import { AuthInterceptor, ParamInterceptor } from './http/http.interceptor';
 import {Routes, RouterModule} from '@angular/router';
 import { MainComponent } from './main/main.component';
+import { HomeModule } from './home/home.module';
 
 const appRoutes: Routes =[
   { path: '', component: MainComponent},
   { path: 'form', component: FormComponent},
+  { path: 'home', loadChildren: './home/home.module#HomeModule'},
   { path: '**', component: FormComponent }
 ];
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, RouterModule.forRoot(appRoutes), HomeModule
+  ],
   declarations: [
     AppComponent,
     HelloComponent,
