@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ItemsComponent } from './items/items.component';
 
 const itemRoutes: Routes = [{ path: 'items', component: ItemsComponent}];
+
 const routes: Routes = [{ path: '', component: HomeComponent, children: itemRoutes }];
 
 @NgModule({
