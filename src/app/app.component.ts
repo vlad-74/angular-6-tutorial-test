@@ -32,12 +32,11 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngOnInit(){   
     this.httpService.getData()
-      .subscribe(data => {
-        console.log('typeof--', data);
-        this.users = data.filter((item, i) => i<3 );
-        console.log('data22', this.users)
-      })
-      error => {this.error = error.message; console.log('error', error);}
+      .subscribe(
+        data => {this.users = data.filter((item, i) => i<3 ); },
+        er => {this.error = er.message; console.log('error', er)}
+      )
+
   }
 
   ngAfterViewInit(): void {
