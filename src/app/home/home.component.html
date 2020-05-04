@@ -1,3 +1,113 @@
-<p>
-home works!
-</p>
+<h3>Формы</h3>
+<hr>
+<h3>ngModel и FormControl</h3>
+  <h4>ng-untouched ng-pristine ng-valid pattern // ng-touched ng-dirty ng-invalid</h4>
+  <div> 
+    <div class="form-group">
+        <label>Имя</label>
+        <input class="form-control" name="name" [(ngModel)]="user.name" #name="ngModel" required />
+        <div [hidden]="name.valid || name.untouched" class="alert alert-danger">
+          Не указано имя
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" 
+            required pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}" />
+        <div [hidden]="email.valid || email.untouched" class="alert alert-danger">
+          Некорректный email
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Телефон</label>
+        <input class="form-control" name="phone" [(ngModel)]="user.phone" #phone="ngModel" 
+            required pattern="[0-9]{10}" />
+        <div [hidden]="phone.valid || phone.untouched" class="alert alert-danger">
+          Некорректный телефон
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="name.invalid || email.invalid || phone.invalid" 
+          class="btn btn-default" (click)="addUser()">Добавить</button>
+    </div>
+  </div>
+  <hr>
+<h3>NgForm и FormGroup</h3>
+  <h3>- form #myForm="ngForm"</h3>
+  <!-- <form #myForm="ngForm" novalidate (ngSubmit)="onSubmit(myForm)"> -->
+  <form #myForm="ngForm" novalidate>
+      <div class="form-group">
+          <label>Имя</label>
+          <input class="form-control" name="name2" [(ngModel)]="name2" required />
+      </div>
+      <div class="form-group">
+          <label>Email</label>
+          <input class="form-control" name="email2" ngModel 
+              required email />
+      </div>
+      <div class="form-group">
+          <label>Телефон</label>
+          <input class="form-control" name="phone2" ngModel 
+              required pattern="[0-9]{10}" />
+      </div>
+      <div class="form-group">
+          <!-- <input type="submit" [disabled]="myForm.invalid" class="btn btn-default" value="Отправить" /> -->
+          <button [disabled]="myForm.invalid"
+              class="btn btn-default" (click)="submit(myForm)">Добавить
+          </button>
+      </div>
+  </form>
+  <div>Имя: {{myForm.value.name2}}</div>
+  <div>Email: {{myForm.value.email2}}</div>
+  <hr>
+
+<h3>FormGroup и FormControl</h3>
+  <h3>- form [formGroup]="myForm"</h3>
+  <h3>- myForm = new FormGroup // myForm = this.formBuilder.group</h3>
+  <form [formGroup]="myForm3" novalidate (ngSubmit)="submit3()">
+      <div class="form-group">
+          <label>Имя</label>
+          <input class="form-control" name="name3" formControlName="userName" />
+            
+          <div class="alert alert-danger"
+              *ngIf="myForm3.controls['userName'].invalid && myForm3.controls['userName'].touched">
+              Не указано имя
+          </div>
+      </div>
+      <div class="form-group">
+          <label>Email</label>
+          <input class="form-control" name="email3" formControlName="userEmail" />
+            
+          <div class="alert alert-danger"
+              *ngIf="myForm3.controls['userEmail'].invalid && myForm3.controls['userEmail'].touched">
+              Некорректный email
+          </div>
+      </div>
+      <div class="form-group">
+          <label>Телефон</label>
+          <input class="form-control" name="phone3" formControlName="userPhone" />
+          <div class="alert alert-danger"
+              *ngIf="myForm3.controls['userPhone'].invalid && myForm3.controls['userPhone'].touched">
+              Некорректный номер телефона
+          </div>
+      </div>
+      <div formArrayName="phones">
+        <div class="form-group" *ngFor="let phone of myForm3.controls['phones'].controls; let i = index">
+            <label>ТелефонЫ</label>
+            <input class="form-control" formControlName="{{i}}" />
+        </div>
+        <br>
+        <span>"phones": new FormArray([new FormControl("+7", Validators.required)])</span>
+        <span style="display: inline-block">"phones": this.formBuilder.array([["+7", Validators.required]])</span>
+      </div>
+      
+      <div class="form-group">
+        <button class="btn btn-default" (click)="addPhone()">
+            Добавить телефон
+        </button>
+        <button class="btn btn-default" [disabled]="myForm3.invalid">
+            Отправить
+        </button>
+      </div>
+  </form>
+  <hr>
