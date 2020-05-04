@@ -4,9 +4,8 @@ import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule }   from '@angular/forms';
 import { HomeComponent } from './home.component';
 import { Routes, RouterModule } from '@angular/router';
-import { ItemsComponent } from './items/items.component';
 
-const itemRoutes: Routes = [{ path: 'items', component: ItemsComponent}];
+const itemRoutes: Routes = [{ path: 'items', component: }];
 
 const routes: Routes = [{ path: '', component: HomeComponent, children: itemRoutes }];
 
@@ -15,7 +14,7 @@ const routes: Routes = [{ path: '', component: HomeComponent, children: itemRout
     CommonModule, FormsModule, ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [HomeComponent, ItemsComponent],
+  declarations: [HomeComponent, ],
   exports: [RouterModule]
 })
 
