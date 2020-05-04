@@ -12,9 +12,9 @@ export class ParamInterceptor implements HttpInterceptor {
 
           return next.handle(paramReq).pipe(
             tap(evt => {
-              console.log('evt - ', evt);
+
               if (evt instanceof HttpResponse) {
-                if(evt.body && evt.body.success){ console.log('evt.body.success', evt.body.success) }
+                if(evt.body && evt.status === 200){ console.log('evt.body', evt.body) }
               }
             }),
             catchError((err: any) => {
