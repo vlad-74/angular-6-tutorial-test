@@ -36,7 +36,6 @@ export class AppComponent implements OnInit, AfterViewInit {
         data => {this.users = data.filter((item, i) => i<3 ); },
         er => {this.error = er.message; console.log('error', er)}
       )
-
   }
 
   ngAfterViewInit(): void {
