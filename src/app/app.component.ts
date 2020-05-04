@@ -10,9 +10,11 @@ import { filter } from 'rxjs/operators';
 })
 export class AppComponent {
 
+  private url: string;
+
   constructor(private router: Router){
     router.events
       .pipe( filter(event => event instanceof NavigationEnd) )
-      .subscribe( (event: NavigationEnd) => {console.log(event.url);} );
+      .subscribe( (event: NavigationEnd) => {this.url = event.url; console.log(event.url);} );
   }    
 }
