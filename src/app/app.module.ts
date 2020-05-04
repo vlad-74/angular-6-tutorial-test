@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; // <- добавлено
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; 
 
 import { AppComponent } from "./app.component";
 
@@ -10,8 +10,6 @@ import { AppService } from './app.service';
 
 import { HttpService } from './http/http.service';
 import { AuthInterceptor, ParamInterceptor } from './http/http.interceptor';
-
-import { Routes, RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 
