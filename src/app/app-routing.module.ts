@@ -17,12 +17,13 @@ import { BoldDirective } from "./directive/bold.directive";
 import { MouseBoldDirective } from "./directive/mouse-bold.directive";
 import { IfHasAccessDirective } from "./directive/if-has-access.directive";
 
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full', component: MainComponent},
   { path: 'form', component: FormComponent},
   { path: 'home', loadChildren: './home/home.module#HomeModule'},
-  { path: '**', component: FormComponent }
+  { path: '**', component: ErrorComponent }
 ];
 
 
@@ -38,6 +39,7 @@ const routes: Routes = [
     BoldDirective,
     MouseBoldDirective,
     IfHasAccessDirective,
+    ErrorComponent,
     ],
   providers: []
 })

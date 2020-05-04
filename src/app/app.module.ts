@@ -15,6 +15,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 
+
 @NgModule({
   imports: [
     BrowserModule, 
@@ -22,7 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   declarations: [
     AppComponent,
-    BookItemComponent,
+    BookItemComponent
   ],
   entryComponents: [BookItemComponent],
   bootstrap: [AppComponent],
