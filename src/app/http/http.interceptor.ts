@@ -1,20 +1,32 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import { tap, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class ParamInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
       if (req.url.includes('jsonplaceholder.typicode.com')) {
-          const paramReq = req.clone({
-              params: req.params.set(
-                  'userId',
-                  '7'
-              )
-          });
-            console.log('paramReq - ', paramReq);
-          return next.handle(paramReq);
+          const paramReq = req.clone({ params: req.params.set('userId', '7') });
+
+          return next.handle(paramReq).pipe(
+            tap(evt => {
+              console.log('evt - ', evt);
+              if (evt instanceof HttpResponse) {
+                if(evt.body && evt.body.success){ console.log('evt.body.success', evt.body.success) }
+              }
+            }),
+            catchError((err: any) => {
+                if(err instanceof HttpErrorResponse) {
+                    try {
+                        console.log('try - err instanceof HttpErrorResponse')
+                    } catch(e) {
+                      console.log('catch - err instanceof HttpErrorResponse', e)
+                    }
+                }
+                return of(err);
+            }));
       } else {
           console.log('req - ', req);
           return next.handle(req);
@@ -39,7 +51,7 @@ export class AuthInterceptor implements HttpInterceptor {
                authHeader
             )
         });
-
+         console.log('authReq - ', authReq);
         return next.handle(authReq);
 
     }
