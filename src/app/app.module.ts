@@ -1,42 +1,28 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule } from "@angular/forms";
+
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; // <- добавлено
 
 import { AppComponent } from "./app.component";
-import { HelloComponent } from "./hello.component";
-import { BoldDirective } from "./directive/bold.directive";
-import { MouseBoldDirective } from "./directive/mouse-bold.directive";
-import { IfHasAccessDirective } from "./directive/if-has-access.directive";
+
 import { BookItemComponent } from "./book-item/book-item.component";
 import { AppService } from './app.service';
-import { FormComponent } from './form/form.component';
-import { ReactiveFormsModule }   from '@angular/forms';
+
 import { HttpService } from './http/http.service';
 import { AuthInterceptor, ParamInterceptor } from './http/http.interceptor';
-import {Routes, RouterModule} from '@angular/router';
-import { MainComponent } from './main/main.component';
-import { HomeModule } from './home/home.module';
 
-const appRoutes: Routes =[
-  { path: '', component: MainComponent},
-  { path: 'form', component: FormComponent},
-  { path: 'home', loadChildren: './home/home.module#HomeModule'},
-  { path: '**', component: FormComponent }
-];
+import { Routes, RouterModule } from '@angular/router';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, RouterModule.forRoot(appRoutes), HomeModule
+  imports: [
+    BrowserModule, 
+    HttpClientModule, AppRoutingModule
   ],
   declarations: [
     AppComponent,
-    HelloComponent,
-    BoldDirective,
-    MouseBoldDirective,
-    IfHasAccessDirective,
     BookItemComponent,
-    FormComponent,
-    MainComponent
   ],
   entryComponents: [BookItemComponent],
   bootstrap: [AppComponent],
