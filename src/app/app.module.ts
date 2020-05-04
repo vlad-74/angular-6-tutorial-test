@@ -17,7 +17,7 @@ import { AuthInterceptor, ParamInterceptor } from './http/http.interceptor';
 import {Routes, RouterModule} from '@angular/router';
 
 const appRoutes: Routes =[
-  { path: '', component: FormComponent},
+  { path: '', component: AppComponent},
   { path: '**', component: FormComponent }
 ];
 
