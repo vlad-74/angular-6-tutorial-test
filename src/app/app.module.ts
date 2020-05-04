@@ -18,8 +18,8 @@ import {Routes, RouterModule} from '@angular/router';
 import { MainComponent } from './main/main.component';
 
 const appRoutes: Routes =[
-  { path: '', component: AppComponent},
-  { path: 'main', component: MainComponent},
+  { path: '', component: MainComponent},
+  { path: 'form', component: FormComponent},
   { path: '**', component: FormComponent }
 ];
 
