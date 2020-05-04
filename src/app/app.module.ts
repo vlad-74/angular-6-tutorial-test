@@ -15,9 +15,11 @@ import { ReactiveFormsModule }   from '@angular/forms';
 import { HttpService } from './http/http.service';
 import { AuthInterceptor, ParamInterceptor } from './http/http.interceptor';
 import {Routes, RouterModule} from '@angular/router';
+import { MainComponent } from './main/main.component';
 
 const appRoutes: Routes =[
   { path: '', component: AppComponent},
+  { path: 'main', component: MainComponent},
   { path: '**', component: FormComponent }
 ];
 
@@ -30,7 +32,8 @@ const appRoutes: Routes =[
     MouseBoldDirective,
     IfHasAccessDirective,
     BookItemComponent,
-    FormComponent
+    FormComponent,
+    MainComponent
   ],
   entryComponents: [BookItemComponent],
   bootstrap: [AppComponent],
