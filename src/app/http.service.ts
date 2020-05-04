@@ -14,7 +14,7 @@ export class HttpService{
         map(data=>{
             let userList = data;
             return userList.map(function(user:any) {
-              return {name: user.userName, age: user.phone};
+              return {name: user.username, phone: user.phone};
             });
           }
         ),
