@@ -9,7 +9,7 @@ const routes: Routes = [{ path: '', component: HomeComponent }];
 
 @NgModule({
   imports: [
-    CommonModule,FormsModule, ReactiveFormsModule,
+    CommonModule, FormsModule, ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [HomeComponent],
