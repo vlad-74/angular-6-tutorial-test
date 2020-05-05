@@ -31,11 +31,12 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule, 
-    RouterModule.forRoot(
-      routes, {onSameUrlNavigation: 'reload', preloadingStrategy: CustomPreloadingStrategyService}
-    ), HomeModule,
-    PreloadModule
+    ReactiveFormsModule,
+    HomeModule,
+    PreloadModule,
+    RouterModule.forRoot(routes, { preloadingStrategy: CustomPreloadingStrategyService }), 
+
+    
   ],
   exports: [RouterModule],
   declarations:[
