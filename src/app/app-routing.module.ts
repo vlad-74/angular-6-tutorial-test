@@ -4,10 +4,10 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 
-import { MainComponent } from './main/main.component';
+import { MainComponent } from './components/main/main.component';
 import { HelloComponent } from "./hello.component";
 
-import { FormComponent } from './form/form.component';
+import { FormComponent } from './components/form/form.component';
 
 import { AppComponent } from './app.component';
 
@@ -18,7 +18,7 @@ import { BoldDirective } from "./directive/bold.directive";
 import { MouseBoldDirective } from "./directive/mouse-bold.directive";
 import { IfHasAccessDirective } from "./directive/if-has-access.directive";
 
-import { ErrorComponent } from './error/error.component';
+import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full', component: MainComponent},
