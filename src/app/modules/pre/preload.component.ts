@@ -10,6 +10,7 @@ export class PreloadComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log();
   }
 
 }

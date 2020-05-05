@@ -7,7 +7,7 @@ import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule }   from '@angular/forms'
 
 import { HomeModule } from './modules/home/home.module';
-import { PreloadModule } from './modules/prel/preload.module';
+import { PreloadModule } from './modules/pre/preload.module';
 
 import { AppComponent } from "./app.component";
 
