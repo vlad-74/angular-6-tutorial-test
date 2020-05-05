@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
+
 import { MainComponent } from './main/main.component';
 import { HelloComponent } from "./hello.component";
 
@@ -31,8 +32,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    CommonModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'}),
-    HomeModule
+    CommonModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
   ],
   exports: [RouterModule],
   declarations:[
