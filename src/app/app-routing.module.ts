@@ -21,8 +21,8 @@ import { IfHasAccessDirective } from "./directive/if-has-access.directive";
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full', component: MainComponent},
   { path: 'form', component: FormComponent},
-  { path: 'home', loadChildren: './modules/home.module#HomeModule'},
-  { path: 'preload', loadChildren: './modules/preload.module#PreloadModule'},
+  { path: 'home', loadChildren: './modules/home/home.module#HomeModule'},
+  { path: 'preload', loadChildren: './modules/preload/preload.module#PreloadModule'},
   { path: '**', component: ErrorComponent }
 ];
 
