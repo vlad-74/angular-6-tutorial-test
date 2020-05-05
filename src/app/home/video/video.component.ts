@@ -13,7 +13,8 @@ export class VideoComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.resolvedVideo = this.route.snapshot.data.video[0];
+    this.resolvedVideo = this.route.snapshot.data.video[0].name;
+    
     console.log('this.route.snapshot.data', this.route.snapshot.data)
   }
 
