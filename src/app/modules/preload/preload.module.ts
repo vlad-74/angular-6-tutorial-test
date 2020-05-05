@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { PreloadComponent } from './preload.component';
 
-const routes: Routes = [{ path: '', component: PreloadComponent}];
+const routes: Routes = [{ path: 'preload', component: PreloadComponent}];
 
 @NgModule({
   imports: [

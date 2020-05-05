@@ -18,7 +18,7 @@ const itemRoutes: Routes = [
     resolve: { video: VideoResolver}
   }
 ];
-const routes: Routes = [{ path: '', component: HomeComponent, children: itemRoutes }];
+const routes: Routes = [{ path: 'home', component: HomeComponent, children: itemRoutes }];
 
 @NgModule({
   imports: [
