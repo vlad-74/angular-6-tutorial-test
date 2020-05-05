@@ -15,6 +15,6 @@ export class AppComponent {
   constructor(private router: Router){
     router.events
       .pipe( filter(event => event instanceof NavigationEnd) )
-      .subscribe( (event: NavigationEnd) => {this.url = event.url; console.log(event.url);} );
+      .subscribe( (event: NavigationEnd) => {this.url = event.url;} );
   }    
 }

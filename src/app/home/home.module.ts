@@ -5,10 +5,10 @@ import { ReactiveFormsModule }   from '@angular/forms';
 import { HomeComponent } from './home.component';
 import { Routes, RouterModule } from '@angular/router';
 import { VideoComponent } from './video/video.component';
-import { VideoResolver } from '../guards/video-resolver';
 
-const itemRoutes: Routes = [{ path: 'video', component: VideoComponent, resolve: { cars: VideoResolver },}];
+import { VideoResolver } from './guards/video-resolver';
 
+const itemRoutes: Routes = [{ path: 'video', component: VideoComponent, resolve: { video: 'VideoResolver'}}];
 const routes: Routes = [{ path: '', component: HomeComponent, children: itemRoutes }];
 
 @NgModule({
@@ -17,7 +17,8 @@ const routes: Routes = [{ path: '', component: HomeComponent, children: itemRout
     RouterModule.forChild(routes)
   ],
   declarations: [HomeComponent, VideoComponent],
-  exports: [RouterModule]
+  providers: [],
+  exports: [RouterModule, ]
 })
 
 export class HomeModule { }
