@@ -5,8 +5,9 @@ import { ReactiveFormsModule }   from '@angular/forms';
 import { HomeComponent } from './home.component';
 import { Routes, RouterModule } from '@angular/router';
 import { VideoComponent } from './video/video.component';
+import { VideoResolver } from '../guards/video-resolver';
 
-const itemRoutes: Routes = [{ path: 'video', component: VideoComponent}];
+const itemRoutes: Routes = [{ path: 'video', component: VideoComponent, resolve: { cars: VideoResolver },}];
 
 const routes: Routes = [{ path: '', component: HomeComponent, children: itemRoutes }];
 
