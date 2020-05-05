@@ -5,7 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from "./app.component";
 
-import { BookItemComponent } from "./book-item/book-item.component";
+import { BookItemComponent } from "./components/book-item/book-item.component";
 import { AppService } from './app.service';
 
 import { HttpService } from './http/http.service';
