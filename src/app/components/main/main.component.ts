@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, OnInit, AfterViewInit, ViewChild, Rendere
 import { map, tap, take } from 'rxjs/operators';
 import { BookItemComponent } from '../book-item/book-item.component';
 import { HttpService} from '../../services/http/http.service';
-import {User} from '../../user';
+import {HttpUser} from '../../models/user';
 
 @Component({
   selector: 'app-main',
