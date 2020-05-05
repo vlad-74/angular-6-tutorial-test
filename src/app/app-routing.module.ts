@@ -20,7 +20,7 @@ import { IfHasAccessDirective } from "./directive/if-has-access.directive";
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full', component: MainComponent},
   { path: 'form', component: FormComponent},
-  { path: 'home', loadChildren: './mohome/home.module#HomeModule'},
+  { path: 'home', loadChildren: './moh/home.module#HomeModule'},
   { path: '**', component: ErrorComponent }
 ];
 
