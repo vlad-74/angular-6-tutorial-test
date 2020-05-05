@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: '', component: MainComponent},
   { path: 'form', component: FormComponent},
   { path: 'home', loadChildren: './modules/home/home.module#HomeModule'},
-  { path: 'preload', loadChildren: './modules/preload/preload.module#PreloadModule'},
+  { path: 'preload', loadChildren: './modules/preload/preload.module#PreloadModule' , data: { preload: true }},
   { path: '**', component: ErrorComponent }
 ];
 
@@ -33,10 +33,10 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HomeModule,
-    PreloadModule,
-    RouterModule.forRoot(routes, { preloadingStrategy: CustomPreloadingStrategyService }), 
-
-    
+    PreloadModule, 
+    RouterModule.forRoot(
+      routes, {onSameUrlNavigation: 'reload', preloadingStrategy: CustomPreloadingStrategyService}
+    ), 
   ],
   exports: [RouterModule],
   declarations:[
