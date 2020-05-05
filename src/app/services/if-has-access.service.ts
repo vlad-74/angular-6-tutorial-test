@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class AppService {
+export class IfHasAccessService {
 
   permissions: string[] = ['d','b','c','a'];
   

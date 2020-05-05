@@ -1,5 +1,5 @@
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
-import { AppService } from '../app.service';
+import { IfHasAccessService } from '../services/if-has-access.service';
 
 @Directive({ selector: '[ifHasAccess]' })
 export class IfHasAccessDirective {
@@ -10,7 +10,7 @@ export class IfHasAccessDirective {
   constructor(
     private templateRef: TemplateRef<any>,
     private viewContainer: ViewContainerRef,
-    private appService: AppService
+    private ifHasAccessService: IfHasAccessService
     ){ }
 
   @Input()
@@ -40,9 +40,9 @@ export class IfHasAccessDirective {
   private checkPermission() {
     let hasPermission = false;
       if (this.logicalOp === 'OR') {
-        hasPermission = this.appService.hasAccessAny(...this.permissions);
+        hasPermission = this.ifHasAccessService.hasAccessAny(...this.permissions);
       } else {
-        hasPermission = this.appService.hasAccess(...this.permissions);
+        hasPermission = this.ifHasAccessService.hasAccess(...this.permissions);
       }
 
     return hasPermission;

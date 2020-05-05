@@ -14,7 +14,7 @@ export class ParamInterceptor implements HttpInterceptor {
 
         // retry - Повторите определенное количество раз в случае возникновения ошибки.
         // paramReq  retry(1),
-        return next.handle(req).pipe()
+        return next.handle(req).pipe(
           tap(evt => {
             if (evt instanceof HttpResponse) {
               if(evt.body && evt.status === 200){ console.log('evt.body', evt.body); console.log('ПРЕЛОАДЕР - ОКОНЧАНИЕ ЗАПРОСА'); }

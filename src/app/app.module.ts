@@ -6,8 +6,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from "./app.component";
 
 import { BookItemComponent } from "./components/book-item/book-item.component";
-import { AppService } from './app.service';
 
+import { IfHasAccessService } from './services/if-has-access.service';
 import { HttpService } from './services/http/http.service';
 import { AuthInterceptor, ParamInterceptor } from './services/http/http.interceptor';
 
@@ -25,7 +25,7 @@ import { HomeModule } from './home/home.module';
   ],
   entryComponents: [BookItemComponent],
   bootstrap: [AppComponent],
-  providers: [AppService,
+  providers: [IfHasAccessService,
   HttpService, {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
