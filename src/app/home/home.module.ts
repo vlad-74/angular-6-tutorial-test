@@ -7,8 +7,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { VideoComponent } from './video/video.component';
 
 import { VideoResolver } from './guards/video-resolver';
+import { VideoGuard } from './guards/video.guard';
+import { ExitVideoGuard } from './guards/exit-video.guard';
 
-const itemRoutes: Routes = [{ path: 'video', component: VideoComponent, resolve: { video: VideoResolver}}];
+const itemRoutes: Routes = [
+  { path: 'video', 
+    component: VideoComponent, 
+    canActivate: [VideoGuard], 
+    canDeactivate: [ExitVideoGuard], 
+    resolve: { video: VideoResolver}
+  }
+];
 const routes: Routes = [{ path: '', component: HomeComponent, children: itemRoutes }];
 
 @NgModule({
@@ -17,7 +26,7 @@ const routes: Routes = [{ path: '', component: HomeComponent, children: itemRout
     RouterModule.forChild(routes)
   ],
   declarations: [HomeComponent, VideoComponent],
-  providers: [VideoResolver],
+  providers: [VideoResolver, VideoGuard, ],
   exports: [RouterModule, ]
 })
 

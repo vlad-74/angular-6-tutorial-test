@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-video',
@@ -9,13 +10,26 @@ import { ActivatedRoute } from '@angular/router';
 
 export class VideoComponent implements OnInit {
   resolvedVideo: any;
-  
+  saved: boolean = false;
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.resolvedVideo = this.route.snapshot.data.video[0].name;
+  }
+
+
+  save(){
+    this.saved = true;
+  }
     
-    console.log('this.route.snapshot.data', this.route.snapshot.data)
+  canDeactivate() : boolean | Observable<boolean>{
+    if(!this.saved){
+        return confirm("Вы хотите покинуть страницу?");
+    }
+    else{
+        return true;
+    }
   }
 
 }
