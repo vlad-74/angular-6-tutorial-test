@@ -17,7 +17,7 @@ const routes: Routes = [{ path: '', component: HomeComponent, children: itemRout
     RouterModule.forChild(routes)
   ],
   declarations: [HomeComponent, VideoComponent],
-  providers: [],
+  providers: [VideoResolver],
   exports: [RouterModule, ]
 })
 

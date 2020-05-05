@@ -13,6 +13,8 @@ import { AppComponent } from './app.component';
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule }   from '@angular/forms';
 
+import { HomeModule } from './home/home.module';
+
 import { BoldDirective } from "./directive/bold.directive";
 import { MouseBoldDirective } from "./directive/mouse-bold.directive";
 import { IfHasAccessDirective } from "./directive/if-has-access.directive";
@@ -29,7 +31,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    CommonModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
+    CommonModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'}),
+    HomeModule
   ],
   exports: [RouterModule],
   declarations:[
