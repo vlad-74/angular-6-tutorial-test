@@ -6,7 +6,7 @@ import { HomeComponent } from './home.component';
 import { Routes, RouterModule } from '@angular/router';
 import { VideoComponent } from './video/video.component';
 
-const itemRoutes: Routes = [{ path: 'items', component: VideoComponent}];
+const itemRoutes: Routes = [{ path: 'video', component: VideoComponent}];
 
 const routes: Routes = [{ path: '', component: HomeComponent, children: itemRoutes }];
 
