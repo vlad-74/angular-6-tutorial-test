@@ -8,8 +8,8 @@ import { AppComponent } from "./app.component";
 import { BookItemComponent } from "./components/book-item/book-item.component";
 import { AppService } from './app.service';
 
-import { HttpService } from './http/http.service';
-import { AuthInterceptor, ParamInterceptor } from './http/http.interceptor';
+import { HttpService } from './services/http/http.service';
+import { AuthInterceptor, ParamInterceptor } from './services/http/http.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';

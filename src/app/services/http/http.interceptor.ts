@@ -10,11 +10,11 @@ export class ParamInterceptor implements HttpInterceptor {
     console.log('ПРЕЛОАДЕР - СТАРТ ЗАПРОСА');
       
     if (req.url.includes('jsonplaceholder.typicode.com')) {
-        const paramReq = req.clone({ params: req.params.set('userId', '7') });
+        // const paramReq = req.clone({ params: req.params.set('userId', '7') });
 
         // retry - Повторите определенное количество раз в случае возникновения ошибки.
-        return next.handle(paramReq).pipe(
-          retry(1),
+        // paramReq  retry(1),
+        return next.handle(req).pipe()
           tap(evt => {
             if (evt instanceof HttpResponse) {
               if(evt.body && evt.status === 200){ console.log('evt.body', evt.body); console.log('ПРЕЛОАДЕР - ОКОНЧАНИЕ ЗАПРОСА'); }

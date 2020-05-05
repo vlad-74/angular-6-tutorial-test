@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, OnInit, AfterViewInit, ViewChild, Renderer2, TemplateRef, ElementRef, EmbeddedViewRef, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 import { map, tap, take } from 'rxjs/operators';
 import { BookItemComponent } from '../book-item/book-item.component';
-import { HttpService} from '../../http/http.service';
+import { HttpService} from '../../services/http/http.service';
 import {User} from '../../user';
 
 @Component({

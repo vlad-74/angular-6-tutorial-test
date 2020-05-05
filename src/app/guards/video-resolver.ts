@@ -2,7 +2,7 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/r
   import { of} from 'rxjs';
   import { Injectable } from '@angular/core';
 
-  import { HttpService} from '../http/http.service';
+  import { HttpService} from '../services/http/http.service';
 
 
   @Injectable()
