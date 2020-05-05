@@ -17,10 +17,10 @@ import { ErrorComponent } from './components/error/error.component'
 import { BoldDirective } from "./directive/bold.directive";
 import { MouseBoldDirective } from "./directive/mouse-bold.directive";
 import { IfHasAccessDirective } from "./directive/if-has-access.directive";
-import { CustomPreloadingStrategyService } from './services/custom-preloading-strategy.service';
+import { CustomPreloadService } from './services/custom-preload.service';
 
 const routes: Routes = [
-  { path: '', component: MainComponent},
+  { path: '', pathMatch: 'full', component: MainComponent},
   { path: 'form', component: FormComponent},
   { path: 'home', loadChildren: './modules/home/home.module#HomeModule'},
   { path: 'preload', loadChildren: './modules/preload/preload.module#PreloadModule' , data: { preload: true }},
@@ -35,7 +35,7 @@ const routes: Routes = [
     HomeModule,
     PreloadModule, 
     RouterModule.forRoot(
-      routes, {onSameUrlNavigation: 'reload', preloadingStrategy: CustomPreloadingStrategyService}
+      routes, {onSameUrlNavigation: 'reload', preloadingStrategy: CustomPreloadService}
     ), 
   ],
   exports: [RouterModule],
