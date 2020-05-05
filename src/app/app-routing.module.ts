@@ -3,22 +3,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
-
-import { MainComponent } from './components/main/main.component';
-import { HelloComponent } from "./hello.component";
-
-import { FormComponent } from './components/form/form.component';
-
-import { AppComponent } from './app.component';
-
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule }   from '@angular/forms'
+
+import { MainComponent } from './components/main/main.component';
+import { HelloComponent } from './components/hello/hello.component';
+import { FormComponent } from './components/form/form.component';
+import { ErrorComponent } from './components/error/error.component';
+
+import { AppComponent } from './app.component';
 
 import { BoldDirective } from "./directive/bold.directive";
 import { MouseBoldDirective } from "./directive/mouse-bold.directive";
 import { IfHasAccessDirective } from "./directive/if-has-access.directive";
-
-import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full', component: MainComponent},
