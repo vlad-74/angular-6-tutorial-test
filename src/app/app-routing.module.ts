@@ -6,9 +6,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule }   from '@angular/forms'
 
-import { HomeModule } from './modules/home/home.module';
-import { PreloadModule } from './modules/pre/preload.module';
-
 import { AppComponent } from "./app.component";
 
 import { MainComponent } from './components/main/main.component';
@@ -34,8 +31,6 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HomeModule,
-    PreloadModule, 
     RouterModule.forRoot(
       routes, {onSameUrlNavigation: 'reload', preloadingStrategy: CustomPreloadService}
     ), 

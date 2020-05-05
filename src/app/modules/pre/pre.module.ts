@@ -7,7 +7,7 @@ const routes: Routes = [{ path: '', component: PreComponent }];
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [PreloadComponent],
+  declarations: [PreComponent],
   exports: [RouterModule]
 })
 export class PreModule {}
