@@ -17,9 +17,10 @@ import { ErrorComponent } from './components/error/error.component'
 import { BoldDirective } from "./directive/bold.directive";
 import { MouseBoldDirective } from "./directive/mouse-bold.directive";
 import { IfHasAccessDirective } from "./directive/if-has-access.directive";
+import { CustomPreloadingStrategyService } from './services/custom-preloading-strategy.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: '', pathMatch: 'full', component: MainComponent},
+  { path: '', component: MainComponent},
   { path: 'form', component: FormComponent},
   { path: 'home', loadChildren: './modules/home/home.module#HomeModule'},
   { path: 'preload', loadChildren: './modules/preload/preload.module#PreloadModule'},
@@ -28,7 +29,13 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    CommonModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'}), HomeModule, PreloadModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule, 
+    RouterModule.forRoot(
+      routes, {onSameUrlNavigation: 'reload', preloadingStrategy: CustomPreloadingStrategyService}
+    ), HomeModule,
+    PreloadModule
   ],
   exports: [RouterModule],
   declarations:[
