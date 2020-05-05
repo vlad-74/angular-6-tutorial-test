@@ -1,13 +1,16 @@
-import { Injectable } from '@angular/core';
-import { Resolve } from '@angular/router';
-import { of } from 'rxjs';
-import { delay } from 'rxjs/operators';
+import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+  import { Observable} from 'rxjs';
+  import { Injectable } from '@angular/core';
 
-@Injectable()
-export class VideoResolver implements Resolve<any> {
- constructor() {}
+  import { HttpService} from '../../http/http.service';
 
-  resolve() {
-    return of('Hello Alligator!');
+
+  @Injectable()
+  export class VideoResolver implements Resolve<any> {
+
+    constructor(private httpService: HttpService) {}
+
+    resolve() {
+      return this.httpService.getData()
+    }
   }
-}

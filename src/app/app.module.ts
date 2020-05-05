@@ -12,12 +12,12 @@ import { HttpService } from './http/http.service';
 import { AuthInterceptor, ParamInterceptor } from './http/http.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
-
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   imports: [
     BrowserModule, 
-    HttpClientModule, AppRoutingModule
+    HttpClientModule, AppRoutingModule, HomeModule
   ],
   declarations: [
     AppComponent,

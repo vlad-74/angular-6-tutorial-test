@@ -8,7 +8,7 @@ import { VideoComponent } from './video/video.component';
 
 import { VideoResolver } from './guards/video-resolver';
 
-const itemRoutes: Routes = [{ path: 'video', component: VideoComponent, resolve: { video: 'VideoResolver'}}];
+const itemRoutes: Routes = [{ path: 'video', component: VideoComponent, resolve: { video: VideoResolver}}];
 const routes: Routes = [{ path: '', component: HomeComponent, children: itemRoutes }];
 
 @NgModule({

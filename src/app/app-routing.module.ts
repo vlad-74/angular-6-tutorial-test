@@ -12,9 +12,7 @@ import { FormComponent } from './form/form.component';
 import { AppComponent } from './app.component';
 
 import { FormsModule } from "@angular/forms";
-import { ReactiveFormsModule }   from '@angular/forms';
-
-import { HomeModule } from './home/home.module';
+import { ReactiveFormsModule }   from '@angular/forms'
 
 import { BoldDirective } from "./directive/bold.directive";
 import { MouseBoldDirective } from "./directive/mouse-bold.directive";
