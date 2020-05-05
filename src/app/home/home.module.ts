@@ -6,9 +6,9 @@ import { HomeComponent } from './home.component';
 import { Routes, RouterModule } from '@angular/router';
 import { VideoComponent } from './video/video.component';
 
-import { VideoResolver } from './guards/video-resolver';
-import { VideoGuard } from './guards/video.guard';
-import { ExitVideoGuard } from './guards/exit-video.guard';
+import { VideoResolver } from '../guards/video-resolver';
+import { VideoGuard } from '../guards/video.guard';
+import { ExitVideoGuard } from '../guards/exit-video.guard';
 
 const itemRoutes: Routes = [
   { path: 'video', 
