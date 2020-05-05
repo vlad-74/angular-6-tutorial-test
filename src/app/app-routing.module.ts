@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', component: MainComponent},
   { path: 'form', component: FormComponent},
   { path: 'home', loadChildren: './modules/home/home.module#HomeModule'},
-  { path: 'preload', loadChildren: './modules/preload/preload.module#PreloadModule' , data: { preload: true }},
+  { path: 'preload', loadChildren: './modules/preload/preload.module#PreModule' , data: { preload: true }},
   { path: '**', component: ErrorComponent }
 ];
 
