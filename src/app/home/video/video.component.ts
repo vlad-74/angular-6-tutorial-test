@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {Observable} from "rxjs";
+import {ComponentCanDeactivate} from '../guards/exit-video.guard';
 
 @Component({
   selector: 'app-video',
@@ -8,7 +9,7 @@ import {Observable} from "rxjs";
   styleUrls: ['./video.component.css']
 })
 
-export class VideoComponent implements OnInit {
+export class VideoComponent implements OnInit, ComponentCanDeactivate { 
   resolvedVideo: any;
   saved: boolean = false;
 

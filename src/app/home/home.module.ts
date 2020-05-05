@@ -26,7 +26,7 @@ const routes: Routes = [{ path: '', component: HomeComponent, children: itemRout
     RouterModule.forChild(routes)
   ],
   declarations: [HomeComponent, VideoComponent],
-  providers: [VideoResolver, VideoGuard, ],
+  providers: [VideoResolver, VideoGuard, ExitVideoGuard],
   exports: [RouterModule, ]
 })
 
