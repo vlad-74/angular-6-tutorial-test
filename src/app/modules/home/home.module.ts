@@ -27,7 +27,7 @@ const routes: Routes = [{ path: '', component: HomeComponent, children: itemRout
   ],
   declarations: [HomeComponent, VideoComponent],
   providers: [VideoResolver, VideoGuard, ExitVideoGuard],
-  exports: [RouterModule, ]
+  exports: [RouterModule]
 })
 
 export class HomeModule { }

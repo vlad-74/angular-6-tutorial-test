@@ -20,7 +20,7 @@ export class MainComponent  {
   liveTemplate: TemplateRef<any>;
 
   name = 'Angular';
-  users: User[] = [];
+  users: UseHttpUserr[] = [];
   error:any;
 
   constructor(
