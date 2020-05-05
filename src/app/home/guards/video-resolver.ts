@@ -1,5 +1,5 @@
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-  import { Observable} from 'rxjs';
+  import { of} from 'rxjs';
   import { Injectable } from '@angular/core';
 
   import { HttpService} from '../../http/http.service';
@@ -11,6 +11,7 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/r
     constructor(private httpService: HttpService) {}
 
     resolve() {
-      return this.httpService.getData()
+      return of([{name: 'Resolver'}]);
+      // return this.httpService.getData()
     }
   }
