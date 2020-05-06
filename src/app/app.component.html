@@ -1,15 +1,15 @@
 <div>
   <ul class="nav">
     <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['']">Главная</a></li>
-    <li routerLinkActive="active"><a [routerLink]="['preload']">preload</a></li>
-    <li routerLinkActive="active"><a [routerLink]="['form']">Form</a></li>
-    <li routerLinkActive="active"><a [routerLink]="['home']">HOME lazy load</a></li>
-    <li routerLinkActive="active"><a [routerLink]="['home/video']">HOME VIDEO дочерняя загрузка</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['form']">Формы</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['preload']">Прелоад</a></li>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['home']">Lazy load</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['home', 'video']">Дочерняя загрузка d Lazy load</a></li>
     <li routerLinkActive="active"><a [routerLink]="['ttttttttt']">ОШИБКА</a></li>
   </ul>
-  
-  <p>Текущий URL {{url}}</p>
-  <router-outlet></router-outlet>
   <hr>
+  <p>Текущий URL {{url}}</p>
+  <hr>
+  <router-outlet></router-outlet>
 </div>
 

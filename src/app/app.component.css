@@ -1,1 +1,9 @@
-.active a { color: red;}
+.active a { color: red; text-decoration: underline;}
+li{
+  list-style-type: none;
+  display: inline;
+  margin: 5px 5px;
+}
+a{
+  text-decoration: none;
+}
