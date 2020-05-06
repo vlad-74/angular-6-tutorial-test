@@ -12,7 +12,6 @@ import { HttpService } from './services/http/http.service';
 import { AuthInterceptor, ParamInterceptor } from './services/http/http.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
-import { TestComponent } from './modules/test/test.component';
 
 @NgModule({
   imports: [
@@ -22,7 +21,7 @@ import { TestComponent } from './modules/test/test.component';
   declarations: [
     AppComponent,
     BookItemComponent,
-    TestComponent
+
   ],
   entryComponents: [BookItemComponent],
   bootstrap: [AppComponent],
