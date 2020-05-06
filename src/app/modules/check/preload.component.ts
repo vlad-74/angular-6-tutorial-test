@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-check',
-  templateUrl: './check.component.html',
-  styleUrls: ['./check.component.css']
+  templateUrl: './preload.component.html',
+  styleUrls: ['./preload.component.css']
 })
-export class CheckComponent implements OnInit {
+export class PreloadComponent implements OnInit {
 
   constructor() { }
 

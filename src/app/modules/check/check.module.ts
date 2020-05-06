@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CheckComponent } from './check.component';
+import { PreloadComponent } from './preload.component';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [{ path: '', component: CheckComponent }];
+const routes: Routes = [{ path: '', component: PreloadComponent }];
 
 @NgModule({
   imports: [CommonModule,RouterModule.forChild(routes)],
-  declarations: [CheckComponent],
+  declarations: [PreloadComponent],
   exports: [RouterModule]
 })
 export class CheckModule { }
