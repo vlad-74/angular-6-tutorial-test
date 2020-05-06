@@ -21,7 +21,7 @@ import { CustomPreloadService } from "./services/custom-preload.service";
 const routes: Routes = [
   { path: "", pathMatch: "full", component: MainComponent },
   { path: "form", component: FormComponent },
-  { path: "test", loadChildren: "./modules/test/test.module#TestModule"},
+  { path: "check", loadChildren: "./modules/check/check.module#CheckModule" },
   { path: "home", loadChildren: "./modules/home/home.module#HomeModule" },
   { path: "**", component: ErrorComponent }
 ];
