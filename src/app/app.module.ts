@@ -20,8 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   declarations: [
     AppComponent,
-    BookItemComponent,
-
+    BookItemComponent
   ],
   entryComponents: [BookItemComponent],
   bootstrap: [AppComponent],
