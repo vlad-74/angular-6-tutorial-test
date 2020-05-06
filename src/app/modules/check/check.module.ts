@@ -10,4 +10,4 @@ const routes: Routes = [{ path: '', component: PreloadComponent }];
   declarations: [PreloadComponent],
   exports: [RouterModule]
 })
-export class CheckModule { }
+export class PreloadModule { }
