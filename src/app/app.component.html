@@ -1,7 +1,7 @@
 <div>
   <ul class="nav">
     <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['']">Главная</a></li>
-    <li routerLinkActive="active"><a [routerLink]="['form',1]">Формы</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['form',1]" [queryParams]="{'product':'phone', 'price': 200}">Формы</a></li>
     <li routerLinkActive="active"><a [routerLink]="['preload']">Прелоад</a></li>
     <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['home']">Lazy load</a></li>
     <li routerLinkActive="active"><a [routerLink]="['home', 'video']">Дочерняя загрузка в Lazy load</a></li>

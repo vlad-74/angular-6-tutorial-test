@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormGroup, FormBuilder, FormArray, FormControl, Validators} from '@angular/forms';
+import { ActivatedRoute} from '@angular/router';
+import {Subscription} from 'rxjs';
 
 export class User{
   name: string; 
@@ -16,11 +18,18 @@ export class FormComponent implements OnInit {
 
   name2: string;
   email2: string;
-  phone2: string;  
+  phone2: string; 
+   
+  id: number;
+  product: string;
+  price: string;
+     
+    private routeSubscription: Subscription;
+    private querySubscription: Subscription;
 
   myForm3 : FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.init();      
@@ -29,6 +38,14 @@ export class FormComponent implements OnInit {
   user: User = new User();
 
   init() {
+    this.routeSubscription = this. route.params.subscribe(params=>this.id=params['id']);
+        this.querySubscription = this. route.queryParams.subscribe(
+            (queryParam: any) => {
+                this.product = queryParam['product'];
+                this.price = queryParam['price'];
+            }
+        );
+
     // this.myForm3 = new FormGroup({
     //     "userName": new FormControl("Tom", Validators.required),
     //     "userEmail": new FormControl("", [Validators.required,Validators.email]),
