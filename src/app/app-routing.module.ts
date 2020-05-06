@@ -21,11 +21,7 @@ import { CustomPreloadService } from "./services/custom-preload.service";
 const routes: Routes = [
   { path: "", pathMatch: "full", component: MainComponent },
   { path: "form", component: FormComponent },
-  {
-    path: "preload", 
-    loadChildren: "./modules/pre/pre.module#PreModule",
-  //   data: { preload: true }
-  },
+  { path: "test", loadChildren: "./modules/test/test.module#TestModule"},
   { path: "home", loadChildren: "./modules/home/home.module#HomeModule" },
   { path: "**", component: ErrorComponent }
 ];
@@ -36,7 +32,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes, {
-      onSameUrlNavigation: "reload",
+      // onSameUrlNavigation: "reload",
       preloadingStrategy: CustomPreloadService
     })
   ],
