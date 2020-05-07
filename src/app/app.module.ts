@@ -2,12 +2,7 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MatButtonModule,
-  MatIconModule,
-  MatTableModule,
-  MatTooltipModule,
-} from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule } from '@angular/material';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; 
 
@@ -27,10 +22,12 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
     MatButtonModule,
+    MatSidenavModule,
     MatIconModule,
-    MatTableModule,
-    MatTooltipModule
+    MatListModule,
+    MatCardModule
   ],
   declarations: [
     AppComponent,
