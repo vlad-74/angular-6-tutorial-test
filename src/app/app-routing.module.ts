@@ -12,6 +12,7 @@ import { MainComponent } from "./components/main/main.component";
 import { HelloComponent } from "./components/hello/hello.component";
 import { FormComponent } from "./components/form/form.component";
 import { PushComponent } from "./components/push/push.component";
+import { TooltipComponent } from './components/push/tooltip/tooltip.component';
 import { ErrorComponent } from "./components/error/error.component";
 
 import { BoldDirective } from "./directive/bold.directive";
@@ -45,6 +46,7 @@ const routes: Routes = [
     HelloComponent,
     FormComponent,
     PushComponent,
+    
     BoldDirective,
     MouseBoldDirective,
     IfHasAccessDirective,

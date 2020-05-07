@@ -13,6 +13,7 @@ import { AuthInterceptor, ParamInterceptor } from './services/http/http.intercep
 
 import { AppRoutingModule } from './app-routing.module';
 
+
 @NgModule({
   imports: [
     BrowserModule, 
@@ -20,7 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   declarations: [
     AppComponent,
-    BookItemComponent,
+    BookItemComponent
   ],
   entryComponents: [BookItemComponent],
   bootstrap: [AppComponent],
