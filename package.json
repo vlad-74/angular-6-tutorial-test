@@ -3,12 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-
     "@angular/common": "6.0.0",
     "@angular/compiler": "6.0.0",
     "@angular/core": "6.0.0",
     "@angular/forms": "6.0.0",
-    "@angular/material": "^9.2.2",
     "@angular/platform-browser": "6.0.0",
     "@angular/platform-browser-dynamic": "6.0.0",
     "@angular/router": "6.0.0",
