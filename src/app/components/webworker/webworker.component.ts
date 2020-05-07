@@ -45,7 +45,7 @@ export class WebworkerComponent implements OnInit {
   }
 
   public factorialWithoutWorker() {
-    this.workerResults.executionResults = null;
+    this.nonWorkerResults.executionResults = null;
     this.nonWorkerResults = new ExecutionResultsModel([], 0, 0, 0);
     const startTime = Date.now();
 

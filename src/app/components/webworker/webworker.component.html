@@ -1,6 +1,6 @@
 <div class="buttons-container">
   <div>
-      <input placeholder="Highest number" [(ngModel)]="maxFactorial">
+      <input type="number" placeholder="Highest number" [(ngModel)]="maxFactorial" max=1000>
   </div>
   <div>
     <button  (click)="factorialWithWorker()">Factorial with worker</button>
@@ -10,7 +10,7 @@
   </div>
 </div>
 
-<div class="results-container">
+<div class="container">
   <div>
     <p><b>Web worker results</b></p>
     <p>Schedule time: {{ workerResults.scheduleTime }} ms</p>
