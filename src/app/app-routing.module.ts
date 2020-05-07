@@ -45,7 +45,8 @@ const routes: Routes = [
   declarations: [
     MainComponent,
     HelloComponent,
-    FormComponent
+    FormComponent,
+    WebworkerComponent,
     PushComponent,
     TooltipComponent,
     BoldDirective,
