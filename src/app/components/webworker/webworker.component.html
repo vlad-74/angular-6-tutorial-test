@@ -1,1 +1,34 @@
-<p>WEBWORKER!!!!!</p>
+<div class="buttons-container">
+  <div>
+      <input placeholder="Highest number" [(ngModel)]="maxFactorial">
+  </div>
+  <div>
+    <button  (click)="factorialWithWorker()">Factorial with worker</button>
+  </div>
+  <div>
+    <button (click)="factorialWithoutWorker()">Factorial without worker</button>
+  </div>
+</div>
+
+<div class="results-container">
+  <div>
+    <p><b>Web worker results</b></p>
+    <p>Schedule time: {{ workerResults.scheduleTime }} ms</p>
+    <p>Execution time: {{ workerResults.executionTime }} ms</p>
+    <p>Number of executions: {{ workerResults.executions }}</p>
+    <p>Results:</p>
+    <p *ngFor="let result of workerResults.executionResults">
+      <i>{{ result.number }}</i>: {{ result.result }}
+    </p>
+  </div>
+  <div>
+    <p><b>Non web worker results</b></p>
+    <p>Schedule time: {{ nonWorkerResults.scheduleTime }} ms</p>
+    <p>Execution time: {{ nonWorkerResults.executionTime }} ms</p>
+    <p>Number of executions: {{ nonWorkerResults.executions }}</p>
+    <p>Results:</p>
+    <p *ngFor="let result of nonWorkerResults.executionResults">
+      <i>{{ result.number }}</i>: {{ result.result }}
+    </p>
+  </div>
+    </div>
