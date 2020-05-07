@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: "", pathMatch: "full", component: MainComponent },
   { path: "form", component: FormComponent },
   { path: "form/:id", component: FormComponent },
+  { path: "webworker", component: WebworkerComponent },
   { path: "push", component: PushComponent },
   { path: "preload", loadChildren: "./modules/preload/preload.module#PreloadModule", data: { preload: true } },
   { path: "home", loadChildren: "./modules/home/home.module#HomeModule" },
