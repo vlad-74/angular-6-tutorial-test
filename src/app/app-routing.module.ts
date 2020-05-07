@@ -46,7 +46,7 @@ const routes: Routes = [
     HelloComponent,
     FormComponent,
     PushComponent,
-    
+    TooltipComponent,
     BoldDirective,
     MouseBoldDirective,
     IfHasAccessDirective,
