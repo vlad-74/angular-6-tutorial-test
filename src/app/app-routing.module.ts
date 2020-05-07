@@ -11,6 +11,7 @@ import { AppComponent } from "./app.component";
 import { MainComponent } from "./components/main/main.component";
 import { HelloComponent } from "./components/hello/hello.component";
 import { FormComponent } from "./components/form/form.component";
+import { WebworkerComponent } from './components/webworker/webworker.component';
 import { PushComponent } from "./components/push/push.component";
 import { TooltipComponent } from './components/push/tooltip/tooltip.component';
 import { ErrorComponent } from "./components/error/error.component";
@@ -44,7 +45,7 @@ const routes: Routes = [
   declarations: [
     MainComponent,
     HelloComponent,
-    FormComponent,
+    FormComponent
     PushComponent,
     TooltipComponent,
     BoldDirective,
