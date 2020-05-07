@@ -11,6 +11,7 @@ import { AppComponent } from "./app.component";
 import { MainComponent } from "./components/main/main.component";
 import { HelloComponent } from "./components/hello/hello.component";
 import { FormComponent } from "./components/form/form.component";
+import { PushComponent } from "./components/push/push.component";
 import { ErrorComponent } from "./components/error/error.component";
 
 import { BoldDirective } from "./directive/bold.directive";
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: "", pathMatch: "full", component: MainComponent },
   { path: "form", component: FormComponent },
   { path: "form/:id", component: FormComponent },
+  { path: "push", component: PushComponent },
   { path: "preload", loadChildren: "./modules/preload/preload.module#PreloadModule", data: { preload: true } },
   { path: "home", loadChildren: "./modules/home/home.module#HomeModule" },
   { path: "**", component: ErrorComponent }
@@ -42,6 +44,7 @@ const routes: Routes = [
     MainComponent,
     HelloComponent,
     FormComponent,
+    PushComponent,
     BoldDirective,
     MouseBoldDirective,
     IfHasAccessDirective,
