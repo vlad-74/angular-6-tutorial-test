@@ -11,7 +11,7 @@ import { filter } from 'rxjs/operators';
 export class AppComponent {
 
   private url: string;
-  worker: Worker;
+
   
   constructor(private router: Router){
     router.events
