@@ -10,7 +10,7 @@ import { ExecutionResultsModel } from './model/execution-results.model';
 })
 export class WebworkerComponent implements OnInit {
 
-  public maxFactorial = 1000;
+  public maxFactorial = 10;
   public nonWorkerResults = new ExecutionResultsModel([], 0, 0, 0);
   public workerResults = new ExecutionResultsModel([], 0, 0, 0);
   
