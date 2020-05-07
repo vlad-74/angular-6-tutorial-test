@@ -3,7 +3,6 @@ import { BrowserModule } from "@angular/platform-browser";
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; 
 
-import { MaterialModule } from './material.module';
 import { AppComponent } from "./app.component";
 
 import { BookItemComponent } from "./components/book-item/book-item.component";
@@ -13,8 +12,6 @@ import { HttpService } from './services/http/http.service';
 import { AuthInterceptor, ParamInterceptor } from './services/http/http.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
-
-
 
 @NgModule({
   imports: [
