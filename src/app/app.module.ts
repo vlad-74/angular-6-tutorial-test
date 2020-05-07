@@ -3,6 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; 
 
+import { MaterialModule } from './material.module';
 import { AppComponent } from "./app.component";
 
 import { BookItemComponent } from "./components/book-item/book-item.component";
@@ -18,7 +19,9 @@ import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   imports: [
     BrowserModule, 
-    HttpClientModule, AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    MaterialModule
   ],
   declarations: [
     AppComponent,
