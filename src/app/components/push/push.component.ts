@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./push.component.css'],
 })
 export class PushComponent implements OnInit {
-   config = {
+  config = {
     position: 'top'
   };
 
