@@ -16,7 +16,8 @@ export class PushComponent implements OnInit {
   }
 
   onClick() {
-    this.config.position = 'bottom';
+    this.config.position = 'bottom'; // 1 вариант НЕ СРАБОТАЕТ при ChangeDetectionStrategy.OnPush в дочернем компоненте
+    this.config = {position: 'bottom'} // 2 вариант СРАБОТАЕТ при ChangeDetectionStrategy.OnPush в дочернем компоненте
   }
 
 }

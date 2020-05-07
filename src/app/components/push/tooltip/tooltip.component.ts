@@ -10,7 +10,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 export class TooltipComponent {
 
   @Input() config;
-  
+
   get runChangeDetection() {
     console.log('Checking the view');
     return true;
