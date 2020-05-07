@@ -12,7 +12,6 @@ export class AppComponent {
 
   private url: string;
 
-  
   constructor(private router: Router){
     router.events
       .pipe( filter(event => event instanceof NavigationEnd) )
